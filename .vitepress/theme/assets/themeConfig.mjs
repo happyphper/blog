@@ -1,3 +1,5 @@
+import { getLunarNewYear } from "../utils/timeTools.mjs";
+
 // 主题配置
 export const themeConfig = {
   // 站点信息
@@ -331,7 +333,7 @@ export const themeConfig = {
       // 倒计时日期
       data: {
         name: "春节",
-        date: "2025-01-29",
+        date: getLunarNewYear(),
       },
     },
     // 站点数据

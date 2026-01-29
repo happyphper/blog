@@ -79,3 +79,45 @@ export const formatDate = (dateString) => {
     ? `${date.getMonth() + 1}/${date.getDate()}`
     : `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
 };
+/**
+ * 获取春节（农历正月初一）的公历日期
+ * 通过内置的农历偏移量数组（2021-2040）进行计算，完全自动判断
+ * @returns {string} 格式为 'YYYY-MM-DD'
+ */
+export const getLunarNewYear = () => {
+  const now = new Date();
+  const currentYear = now.getFullYear();
+
+  /**
+   * 2021-2040年春节公历日期偏移量 (月份, 日期)
+   * 索引 0 代表 2021年，以此类推
+   */
+  const springFestivalDates = [
+    [2, 12], [2, 1], [1, 22], [2, 10], [1, 29], // 2021 - 2025
+    [2, 17], [2, 6], [1, 26], [2, 13], [2, 3],  // 2026 - 2030
+    [1, 23], [2, 11], [1, 31], [2, 19], [2, 8], // 2031 - 2035
+    [1, 28], [2, 15], [2, 4], [1, 24], [2, 12]  // 2036 - 2040
+  ];
+
+  const getYearDate = (year) => {
+    const index = year - 2021;
+    if (index < 0 || index >= springFestivalDates.length) return null;
+    const [month, day] = springFestivalDates[index];
+    return new Date(year, month - 1, day);
+  };
+
+  let targetDate = getYearDate(currentYear);
+
+  // 如果今年春节已过，计算明年春节
+  if (!targetDate || now > targetDate) {
+    targetDate = getYearDate(currentYear + 1);
+  }
+
+  if (!targetDate) return "";
+
+  const y = targetDate.getFullYear();
+  const m = (targetDate.getMonth() + 1).toString().padStart(2, "0");
+  const d = targetDate.getDate().toString().padStart(2, "0");
+  return `${y}-${m}-${d}`;
+};
+
