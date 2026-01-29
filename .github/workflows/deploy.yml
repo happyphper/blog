@@ -55,7 +55,8 @@ jobs:
 
           if [ -n "$WEBHOOK_URL" ]; then
             # 注意：Variables 会在日志中明文显示，Secrets 会被加密掩盖
-            curl -X POST "${WEBHOOK_URL}&tag=${{ github.ref_name }}"
+            # -k: 忽略 SSL 证书验证 (解决自签名证书问题)
+            curl -k -X POST "${WEBHOOK_URL}&tag=${{ github.ref_name }}"
             echo "Webhook triggered successfully."
           else
             echo "Warning: BT_WEBHOOK_URL is not set in Secrets or Variables. Skipping webhook trigger."
