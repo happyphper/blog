@@ -51,7 +51,9 @@ export const mainStore = defineStore("main", {
       lastScrollY: 0,
       // 站点背景
       backgroundType: "patterns",
-      backgroundUrl: "https://tuapi.eees.cc/api.php?category={dongman,fengjing}&type=302",
+      backgroundUrl: "https://api.paugram.com/wallpaper/",
+      // 赞赏显示
+      rewardShow: false,
     };
   },
   getters: {},
@@ -59,8 +61,6 @@ export const mainStore = defineStore("main", {
     // 切换应用状态
     changeShowStatus(value, blur = true) {
       this[value] = !this[value];
-      // 阻止滚动
-      document.body.style.overflowY = this[value] ? "hidden" : "";
       // 全局模糊
       const globalApp = document.getElementById("app");
       this[value] && this.backgroundBlur && blur
@@ -83,13 +83,6 @@ export const mainStore = defineStore("main", {
     },
     // 切换明暗模式
     changeThemeType() {
-      // 禁止壁纸模式切换
-      if (this.backgroundType === "image") {
-        $message.warning("无法在壁纸模式下切换明暗模式", {
-          duration: 1500,
-        });
-        return false;
-      }
       this.themeType === "auto"
         ? (this.themeType = "dark")
         : this.themeType === "dark"

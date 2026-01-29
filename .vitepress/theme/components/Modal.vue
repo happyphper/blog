@@ -3,14 +3,11 @@
   <Teleport to="body">
     <Transition name="fade" mode="out-in">
       <div v-if="show" class="modal">
-        <div class="modal-mask" @click.stop="maskClick" />
-        <div
-          :style="{
-            maxWidth: typeof maxWidth === 'string' ? maxWidth : `${maxWidth}px`,
-          }"
-          class="modal-main s-card"
-          @click.stop
-        >
+        <div v-if="mask" class="modal-mask" @click.stop="maskClick" />
+        <div v-else class="modal-click-mask" @click.stop="maskClick" />
+        <div :style="{
+          maxWidth: typeof maxWidth === 'string' ? maxWidth : `${maxWidth}px`,
+        }" class="modal-main s-card" @click.stop>
           <!-- 标题 -->
           <div v-if="title" class="title">
             <div class="title-left">
@@ -62,6 +59,11 @@ const props = defineProps({
     type: Number,
     default: 80,
   },
+  // 是否显示遮罩和模糊
+  mask: {
+    type: Boolean,
+    default: true,
+  },
 });
 
 // 发射事件
@@ -71,13 +73,29 @@ const emit = defineEmits(["mask-click", "modal-close"]);
 const maskClick = () => emit("mask-click");
 const modalClose = () => emit("modal-close");
 
+// 监听按下 Esc
+const handleEsc = (e) => {
+  if (e.key === "Escape" && props.show) {
+    modalClose();
+  }
+};
+
 // 监听开启
 watch(
   () => props.show,
   (val) => {
     document.body.style.overflowY = val ? "hidden" : "";
+    if (val) {
+      window.addEventListener("keydown", handleEsc);
+    } else {
+      window.removeEventListener("keydown", handleEsc);
+    }
   },
 );
+
+onBeforeUnmount(() => {
+  window.removeEventListener("keydown", handleEsc);
+});
 </script>
 
 <style lang="scss" scoped>
@@ -88,9 +106,10 @@ watch(
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   z-index: 2000;
+
   .modal-mask {
     position: absolute;
     top: 0;
@@ -100,12 +119,14 @@ watch(
     z-index: -1;
     background-color: var(--main-mask-background);
   }
+
   .modal-main {
     position: absolute;
     padding: 0;
-    animation: fade-up 0.5s forwards;
     width: calc(100% - 40px);
     overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
     .title {
       display: flex;
       flex-direction: row;
@@ -116,13 +137,16 @@ watch(
       height: 64px;
       background-color: var(--main-card-background);
       border-bottom: 1px solid var(--main-card-border);
+
       .title-left {
         width: 100%;
+
         .iconfont {
           font-size: 1.25rem;
           margin-right: 8px;
         }
       }
+
       .close {
         position: absolute;
         right: 20px;
@@ -132,16 +156,46 @@ watch(
         padding: 8px;
         transition: background-color 0.3s;
         cursor: pointer;
+
         &:hover {
           background-color: var(--main-card-border);
         }
       }
     }
+
     .modal-content {
       max-height: calc(var(--height) - 46px);
       padding: 20px;
       overflow: auto;
     }
+  }
+
+  // 过渡阶段样式
+  &.fade-enter-from,
+  &.fade-leave-to {
+    opacity: 0;
+
+    .modal-main {
+      transform: translateY(20px) scale(0.95);
+    }
+  }
+
+  &.fade-enter-to,
+  &.fade-leave-from {
+    opacity: 1;
+
+    .modal-main {
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .modal-click-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
   }
 }
 </style>

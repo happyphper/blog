@@ -1,4 +1,3 @@
-<!-- 全局设置 -->
 <template>
   <div class="settings">
     <div class="set-btn s-card" @click="store.changeShowStatus('showSeetings')">
@@ -6,28 +5,17 @@
       <span class="set-text">个性化配置</span>
     </div>
     <!-- 设置面板 -->
-    <Modal
-      :show="store.showSeetings"
-      title="个性化配置"
-      titleIcon="style"
-      @mask-click="store.changeShowStatus('showSeetings')"
-      @modal-close="store.changeShowStatus('showSeetings')"
-    >
+    <Modal :show="store.showSeetings" title="个性化配置" titleIcon="style"
+      @mask-click="store.changeShowStatus('showSeetings')" @modal-close="store.changeShowStatus('showSeetings')">
       <div class="set-list">
         <span class="title">字体</span>
         <div class="set-item">
           <span class="set-label">全站字体</span>
           <div class="set-options">
-            <span
-              :class="['options', { choose: fontFamily === 'hmos' }]"
-              @click="fontFamily = 'hmos'"
-            >
+            <span :class="['options', { choose: fontFamily === 'hmos' }]" @click="fontFamily = 'hmos'">
               HarmonyOS Sans
             </span>
-            <span
-              :class="['options', { choose: fontFamily === 'lxgw' }]"
-              @click="fontFamily = 'lxgw'"
-            >
+            <span :class="['options', { choose: fontFamily === 'lxgw' }]" @click="fontFamily = 'lxgw'">
               霞鹜文楷
             </span>
           </div>
@@ -44,22 +32,14 @@
         <div class="set-item">
           <span class="set-label">全站背景</span>
           <div class="set-options">
-            <span
-              :class="['options', { choose: backgroundType === 'close' }]"
-              @click="backgroundType = 'close'"
-            >
+            <span :class="['options', { choose: backgroundType === 'close' }]" @click="backgroundType = 'close'">
               关闭
             </span>
-            <span
-              :class="['options', { choose: backgroundType === 'patterns' }]"
-              @click="backgroundType = 'patterns'"
-            >
+            <span :class="['options', { choose: backgroundType === 'patterns' }]" @click="backgroundType = 'patterns'">
               纹理
             </span>
-            <span
-              :class="['options', { choose: backgroundType === 'image' }]"
-              @click="(backgroundType = 'image'), (themeType = 'dark')"
-            >
+            <span :class="['options', { choose: backgroundType === 'image' }]"
+              @click="(backgroundType = 'image'), (themeType = 'dark')">
               图片
             </span>
           </div>
@@ -67,29 +47,18 @@
         <div v-if="backgroundType === 'image'" class="set-item">
           <span class="set-label">背景图片地址</span>
           <div class="set-options">
-            <input
-              v-model="backgroundUrl"
-              type="url"
-              pattern="https?://.+"
-              title="请输入有效的网址，例如：http://www.example.com"
-              required
-            />
+            <input v-model="backgroundUrl" type="url" pattern="https?://.+" title="请输入有效的网址，例如：http://www.example.com"
+              required />
           </div>
         </div>
         <span class="title">首页样式</span>
         <div class="set-item">
           <span class="set-label">Banner 高度</span>
           <div class="set-options">
-            <span
-              :class="['options', { choose: bannerType === 'half' }]"
-              @click="bannerType = 'half'"
-            >
+            <span :class="['options', { choose: bannerType === 'half' }]" @click="bannerType = 'half'">
               半屏
             </span>
-            <span
-              :class="['options', { choose: bannerType === 'full' }]"
-              @click="bannerType = 'full'"
-            >
+            <span :class="['options', { choose: bannerType === 'full' }]" @click="bannerType = 'full'">
               全屏
             </span>
           </div>
@@ -98,16 +67,10 @@
         <div class="set-item">
           <span class="set-label">额外信息显示位置</span>
           <div class="set-options">
-            <span
-              :class="['options', { choose: infoPosition === 'normal' }]"
-              @click="infoPosition = 'normal'"
-            >
+            <span :class="['options', { choose: infoPosition === 'normal' }]" @click="infoPosition = 'normal'">
               默认位置
             </span>
-            <span
-              :class="['options', { choose: infoPosition === 'fixed' }]"
-              @click="infoPosition = 'fixed'"
-            >
+            <span :class="['options', { choose: infoPosition === 'fixed' }]" @click="infoPosition = 'fixed'">
               右下角
             </span>
           </div>
@@ -129,43 +92,65 @@ const { themeType, fontFamily, fontSize, infoPosition, backgroundType, backgroun
 <style lang="scss" scoped>
 .settings {
   .set-btn {
+    position: relative;
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     align-items: center;
     width: 42px;
     height: 42px;
-    padding: 0;
-    border-radius: 25px;
-    box-shadow: 0 6px 10px -4px var(--main-dark-shadow);
+    min-width: 42px;
+    max-width: 42px;
+    padding: 0 !important;
+    margin-top: 10px;
+    border-radius: 40px;
+    background-color: var(--main-card-background);
+    border: 1px solid var(--main-card-border);
+    box-shadow: 0 4px 12px -2px var(--main-dark-shadow);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+
     .iconfont {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
       font-size: 22px;
-      margin-left: 10px;
       transition: color 0.3s;
     }
+
     .set-text {
-      margin-left: 10px;
-      display: inline-flex;
+      width: 0;
       opacity: 0;
       font-size: 14px;
-      line-height: 1;
-      overflow: hidden;
+      font-weight: bold;
+      color: #fff;
       white-space: nowrap;
-      transition: opacity 0.3s;
+      transition: all 0.3s;
+      margin-right: 0;
     }
+
     &:hover {
+      max-width: 140px;
       width: 140px;
-      color: var(--main-card-background);
-      border-color: var(--main-color);
       background-color: var(--main-color);
+      border-color: var(--main-color);
+
       .iconfont {
-        color: var(--main-card-background);
+        color: #fff;
       }
+
       .set-text {
+        width: 85px;
         opacity: 1;
+        margin-left: 1rem;
       }
     }
   }
 }
+
 .set-list {
   .title {
     display: block;
@@ -177,22 +162,26 @@ const { themeType, fontFamily, fontSize, infoPosition, backgroundType, backgroun
     border-radius: 4px 8px 8px 4px;
     background-color: var(--main-border-shadow);
     padding: 6px 0 6px 12px;
+
     &:first-child {
       margin-top: 0;
     }
   }
+
   .set-item {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 12px;
+
     .set-options {
       display: flex;
       flex-direction: row;
       align-items: center;
       height: 40px;
       border-radius: 8px;
+
       .options {
         display: flex;
         align-items: center;
@@ -206,19 +195,23 @@ const { themeType, fontFamily, fontSize, infoPosition, backgroundType, backgroun
         transition:
           color 0.3s,
           background-color 0.3s;
+
         &.choose,
         &:hover {
           color: var(--main-card-background);
           background-color: var(--main-color);
           box-shadow: 0 8px 16px -4px var(--main-border-shadow);
         }
+
         &:last-child {
           margin-right: 0;
         }
       }
+
       .num {
         margin: 0 4px;
       }
+
       input {
         border: none;
         outline: none;
@@ -231,14 +224,18 @@ const { themeType, fontFamily, fontSize, infoPosition, backgroundType, backgroun
         font-size: 14px;
       }
     }
+
     &:last-child {
       margin-bottom: 0;
     }
+
     @media (max-width: 512px) {
       flex-direction: column;
       align-items: flex-start;
+
       .set-options {
         margin-top: 8px;
+
         .options {
           &:first-child {
             margin-left: 0;

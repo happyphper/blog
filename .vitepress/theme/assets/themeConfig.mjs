@@ -106,10 +106,23 @@ export const themeConfig = {
       [
         "link",
         {
-          href: "https://X5EBEZB53I-dsn.algolia.net",
           rel: "preconnect",
           crossorigin: "",
         },
+      ],
+      // 百度统计
+      [
+        "script",
+        {},
+        `
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?245286474a11132fc7cdc6839d24147d";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+        `,
       ],
     ],
   },
@@ -129,13 +142,6 @@ export const themeConfig = {
         { text: "技术分享", link: "/pages/categories/技术分享", icon: "technical" },
         { text: "我的项目", link: "/pages/project", icon: "code" },
         { text: "效率工具", link: "/pages/tools", icon: "tools" },
-      ],
-    },
-    {
-      text: "友链",
-      items: [
-        { text: "友链鱼塘", link: "/pages/friends", icon: "fish" },
-        { text: "友情链接", link: "/pages/link", icon: "people" },
       ],
     },
     {
@@ -218,23 +224,15 @@ export const themeConfig = {
       },
       {
         icon: "github",
-        link: "https://www.github.com/imsyy/",
+        link: "https://www.github.com/happyphper/",
       },
       {
         icon: "telegram",
-        link: "https://t.me/bottom_user",
+        link: "https://t.me/wangtiechu",
       },
       {
         icon: "bilibili",
-        link: "https://space.bilibili.com/98544142",
-      },
-      {
-        icon: "qq",
-        link: "https://res.abeim.cn/api/qq/?qq=1539250352",
-      },
-      {
-        icon: "twitter-x",
-        link: "https://twitter.com/iimmsyy",
+        link: "https://space.bilibili.com/430230553",
       },
     ],
     // sitemap
@@ -252,9 +250,7 @@ export const themeConfig = {
         text: "项目",
         items: [
           { text: "Home", link: "https://github.com/imsyy/home/", newTab: true },
-          { text: "SPlayer", link: "https://github.com/imsyy/SPlayer/", newTab: true },
-          { text: "DailyHotApi", link: "https://github.com/imsyy/DailyHotApi/", newTab: true },
-          { text: "Snavigation", link: "https://github.com/imsyy/Snavigation/", newTab: true },
+          { text: "Langchain中文", link: "https://langchain.longbao.wang", newTab: true },
         ],
       },
       {
@@ -366,19 +362,18 @@ export const themeConfig = {
     type: "playlist",
   },
   // 搜索
-  // https://www.algolia.com/
+  // https://vitepress.dev/reference/default-theme-search#local-search
   search: {
-    enable: false,
-    appId: "",
-    apiKey: "",
+    enable: true,
+    provider: "local",
   },
   // 打赏
   rewardData: {
     enable: true,
     // 微信二维码
-    wechat: "/images/not_support.png",
+    wechat: "/wechat.png",
     // 支付宝二维码
-    alipay: "/images/not_support.png",
+    alipay: "/alipay.png",
   },
   // 图片灯箱
   fancybox: {
@@ -412,5 +407,5 @@ export const themeConfig = {
   // 站点统计
   tongji: {
     "51la": "",
-  },
+  }
 };

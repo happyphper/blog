@@ -70,10 +70,14 @@ export const getDaysUntil = (dateStr) => {
  * @returns {string} 格式化后的日期。
  */
 export const formatDate = (dateString) => {
+  if (!dateString) return "";
   // 获取当前年份
   const currentYear = new Date().getFullYear();
-  // 解析传入的日期字符串
-  const date = new Date(dateString.replace(/-/g, "/"));
+  // 创建日期对象（兼容时间戳和字符串）
+  const date = new Date(dateString);
+  // 检查日期是否有效
+  if (isNaN(date.getTime())) return dateString;
+
   // 检查年份是否相同，并且格式化日期
   return date.getFullYear() === currentYear
     ? `${date.getMonth() + 1}/${date.getDate()}`

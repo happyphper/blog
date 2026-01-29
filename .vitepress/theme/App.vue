@@ -2,9 +2,7 @@
   <!-- 背景图片 -->
   <Background />
   <!-- 加载提示 -->
-  <Loading />
-  <!-- 中控台 -->
-  <Control />
+  <!-- <Loading /> -->
   <!-- 导航栏 -->
   <Nav />
   <!-- 主内容 -->
@@ -17,6 +15,8 @@
     <template v-else>
       <!-- 文章页面 -->
       <Post v-if="isPostPage" />
+      <!-- 致谢页面 -->
+      <Thanks v-else-if="frontmatter.layout === 'thanks'" />
       <!-- 普通页面 -->
       <Page v-else-if="!page.isNotFound" />
     </template>
@@ -26,16 +26,18 @@
   <Footer v-show="!loadingStatus" />
   <!-- 悬浮菜单 -->
   <Teleport to="body">
-    <!-- 左侧菜单 -->
-    <div :class="['left-menu', { hidden: footerIsShow }]">
+    <!-- 右侧悬浮菜单 -->
+    <div class="right-menu-floating">
+      <!-- 返回顶部 -->
+      <BackToTop />
+      <!-- 随机文章 -->
+      <RandomPost />
       <!-- 全局设置 -->
       <Settings />
-      <!-- 全局播放器 -->
-      <Player />
     </div>
+    <!-- 赞赏弹窗 -->
+    <Reward />
   </Teleport>
-  <!-- 右键菜单 -->
-  <RightMenu ref="rightMenuRef" />
   <!-- 全局消息 -->
   <Message />
 </template>
@@ -51,19 +53,11 @@ const { frontmatter, page, theme } = useData();
 const { loadingStatus, footerIsShow, themeValue, themeType, backgroundType, fontFamily, fontSize } =
   storeToRefs(store);
 
-// 右键菜单
-const rightMenuRef = ref(null);
-
 // 判断是否为文章页面
 const isPostPage = computed(() => {
   const routePath = decodeURIComponent(route.path);
   return routePath.includes("/posts/");
 });
-
-// 开启右键菜单
-const openRightMenu = (e) => {
-  rightMenuRef.value?.openRightMenu(e);
-};
 
 // 复制时触发
 const copyTip = () => {
@@ -131,6 +125,10 @@ watch(
 
 onMounted(() => {
   console.log(frontmatter.value, page.value, theme.value);
+  // 脏数据修复：如果背景地址包含已失效的域名，强制重置
+  if (store.backgroundUrl.includes("eees.cc")) {
+    store.backgroundUrl = "https://api.paugram.com/wallpaper/";
+  }
   // 全站置灰
   specialDayGray();
   // 更改主题类别
@@ -139,8 +137,6 @@ onMounted(() => {
   changeSiteFont();
   // 滚动监听
   window.addEventListener("scroll", calculateScroll);
-  // 右键监听
-  window.addEventListener("contextmenu", openRightMenu);
   // 复制监听
   window.addEventListener("copy", copyTip);
   // 监听系统颜色
@@ -149,7 +145,6 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
   window.removeEventListener("scroll", calculateScroll);
-  window.removeEventListener("contextmenu", openRightMenu);
 });
 </script>
 
@@ -163,24 +158,32 @@ onBeforeUnmount(() => {
   animation: show 0.5s forwards;
   animation-duration: 0.5s;
   display: block;
+
   &.loading {
     display: none;
   }
+
   @media (max-width: 768px) {
     padding: 1rem 1.5rem;
+
     &.is-post {
       padding: 0;
     }
   }
 }
-.left-menu {
+
+.right-menu-floating {
   position: fixed;
-  left: 20px;
+  right: 20px;
   bottom: 20px;
   z-index: 1002;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   transition:
     opacity 0.3s,
     transform 0.3s;
+
   &.hidden {
     opacity: 0;
     transform: translateY(100px);

@@ -1,291 +1,267 @@
 <!-- 全局搜索 -->
 <template>
-  <Modal
-    :show="store.searchShow"
-    title="全局搜索"
-    titleIcon="search"
-    @mask-click="store.changeShowStatus('searchShow')"
-    @modal-close="store.changeShowStatus('searchShow')"
-  >
-    <ais-instant-search
-      :search-client="searchClient"
-      :future="{
-        preserveSharedStateOnUnmount: true,
-      }"
-      index-name="imsyy"
-      @state-change="searchChange"
-    >
-      <ais-configure :hits-per-page.camel="8" />
-      <ais-search-box placeholder="想要搜点什么" autofocus />
-      <ais-hits v-if="hasSearchValue">
-        <template v-slot="{ items }">
-          <Transition name="fade" mode="out-in">
-            <div v-if="formatSearchData(items)?.length" class="search-list">
-              <div
-                v-for="(item, index) in formatSearchData(items)"
-                :key="index"
-                class="search-item s-card hover"
-                @click="jumpSearch(item.url)"
-              >
-                <p class="title" v-html="item.title" />
-                <p v-if="item?.anchor" class="anchor" v-html="item.anchor" />
-                <p v-if="item?.content" class="content s-card" v-html="item.content" />
-              </div>
+    <Modal :show="store.searchShow" :mask="true" title="全局搜索" titleIcon="search" @mask-click="closeSearch"
+        @modal-close="closeSearch">
+        <div class="local-search">
+            <div class="search-box">
+                <input ref="searchInputRef" v-model="searchQuery" type="text" placeholder="想要搜点什么" autofocus
+                    class="search-input" @keydown.esc="closeSearch"
+                    @keydown.enter="filteredResults.length && jumpSearch(filteredResults[0].regularPath)" />
             </div>
-            <div v-else class="no-result">
-              <i class="iconfont icon-search-empty" />
-              <span class="text">搜索结果为空</span>
+            <Transition name="fade" mode="out-in">
+                <div v-if="hasSearchValue" class="search-results">
+                    <div v-if="filteredResults.length" class="search-list">
+                        <div v-for="(item, index) in filteredResults" :key="index" class="search-item s-card hover"
+                            @click="jumpSearch(item.regularPath)">
+                            <p class="title" v-html="highlight(item.title)" />
+                            <div class="meta-info">
+                                <span v-if="item.categories" class="category">
+                                    <i class="iconfont icon-folder" />
+                                    {{ item.categories }}
+                                </span>
+                                <span v-if="item.date" class="date">
+                                    <i class="iconfont icon-date" />
+                                    {{ formatDate(item.date) }}
+                                </span>
+                            </div>
+                            <p v-if="item.description" class="content s-card" v-html="highlight(item.description)" />
+                        </div>
+                    </div>
+                    <div v-else class="no-result">
+                        <i class="iconfont icon-search-empty" />
+                        <span class="text">搜索结果为空</span>
+                    </div>
+                </div>
+                <div v-else class="search-tip">
+                    <i class="iconfont icon-search" />
+                    <span class="text">输入关键词开始搜索</span>
+                </div>
+            </Transition>
+            <div class="information">
+                <span v-if="hasSearchValue" class="text"> 找到 {{ filteredResults.length }} 条结果 </span>
+                <div class="power">
+                    <i class="iconfont icon-technical" />
+                    <span class="name">本地搜索</span>
+                </div>
             </div>
-          </Transition>
-        </template>
-      </ais-hits>
-      <ais-pagination v-if="hasSearchValue" />
-      <ais-stats>
-        <template v-slot="{ processingTimeMS }">
-          <div class="information">
-            <span v-if="hasSearchValue" class="text"> 本次用时 {{ processingTimeMS }} 毫秒 </span>
-          </div>
-          <a class="power" href="https://www.algolia.com/" target="_blank">
-            <i class="iconfont icon-algolia" />
-            <span class="name">Algolia</span>
-          </a>
-        </template>
-      </ais-stats>
-    </ais-instant-search>
-  </Modal>
+        </div>
+    </Modal>
 </template>
 
 <script setup>
 import { mainStore } from "@/store";
-import { liteClient } from "algoliasearch/lite";
+import { formatDate } from "@/utils/timeTools";
 
 const store = mainStore();
 const router = useRouter();
-
 const { theme } = useData();
-const { appId, apiKey } = theme.value.search;
 
-const searchClient = liteClient(appId, apiKey);
+const searchQuery = ref("");
+const searchInputRef = ref(null);
+
+// 监听搜索框开启状态
+watch(
+    () => store.searchShow,
+    (val) => {
+        if (val) {
+            nextTick(() => {
+                searchInputRef.value?.focus();
+            });
+        }
+    }
+);
 
 // 是否具有搜索词
-const hasSearchValue = ref(false);
+const hasSearchValue = computed(() => searchQuery.value.trim().length > 0);
 
-// 搜索变化
-const searchChange = ({ uiState, setUiState }) => {
-  const searchData = Object.values(uiState);
-  hasSearchValue.value = searchData.length > 0 && searchData[0].query?.length > 0;
-  setUiState(uiState);
-};
+// 搜索过滤逻辑
+const filteredResults = computed(() => {
+    if (!hasSearchValue.value) return [];
+    const query = searchQuery.value.toLowerCase().trim();
+    const results = (theme.value.postData || []).filter((post) => {
+        // 基础信息匹配
+        const isTitleMatch = post.title?.toLowerCase().includes(query);
+        const isDescMatch = post.description?.toLowerCase().includes(query);
 
-// 处理搜索结果
-const formatSearchData = (data) => {
-  const results = [];
-  // 遍历搜索结果
-  for (let i = 0; i < data.length; i++) {
-    const search = data[i];
-    // 若无 anchor
-    // if (search.anchor === "" || search.anchor === "app") continue;
-    // 获取数据
-    const url = search?.url;
-    const type = search.type === "lvl1" ? "post" : "content";
-    const title = search._highlightResult?.hierarchy?.lvl1?.value;
-    const anchor = search._highlightResult?.hierarchy?.[search.type]?.value;
-    const content = search._highlightResult?.content?.value;
-    // 生成搜索数据
-    const searchData = { url, type, title, anchor, content };
-    results.push(searchData);
-  }
-  console.log(results);
-  return results;
+        // 标签匹配 (处理数组)
+        const tags = Array.isArray(post.tags) ? post.tags.join(" ") : post.tags || "";
+        const isTagsMatch = tags.toLowerCase().includes(query);
+
+        // 分类匹配 (处理数组)
+        const categories = Array.isArray(post.categories) ? post.categories.join(" ") : post.categories || "";
+        const isCategoriesMatch = categories.toLowerCase().includes(query);
+
+        return isTitleMatch || isDescMatch || isTagsMatch || isCategoriesMatch;
+    });
+    return results;
+});
+
+// 高亮关键词
+const highlight = (text) => {
+    if (!text) return "";
+    if (!hasSearchValue.value) return text;
+    const query = searchQuery.value.trim();
+    const reg = new RegExp(`(${query})`, "gi");
+    return text.replace(reg, '<mark>$1</mark>');
 };
 
 // 跳转搜索结果
 const jumpSearch = (url) => {
-  store.changeShowStatus("searchShow");
-  router.go(url);
+    store.changeShowStatus("searchShow");
+    router.go(url);
+    searchQuery.value = "";
+};
+
+// 关闭搜索
+const closeSearch = () => {
+    store.changeShowStatus("searchShow");
+    searchQuery.value = "";
 };
 
 onBeforeUnmount(() => {
-  hasSearchValue.value = false;
+    searchQuery.value = "";
 });
 </script>
 
-<style lang="scss">
-.ais-InstantSearch {
-  height: 100%;
-  .ais-SearchBox {
-    height: 40px;
-    width: 100%;
-    .ais-SearchBox-input {
-      width: 100%;
-      outline: none;
-      border-radius: 8px;
-      font-size: 16px;
-      padding: 0.6rem 1rem;
-      color: var(--main-font-color);
-      font-family: var(--main-font-family);
-      border: 1px solid var(--main-card-border);
-      background-color: var(--main-card-second-background);
-      transition:
-        border-color 0.3s,
-        box-shadow 0.3s;
-      &:focus {
-        border-color: var(--main-color);
-        box-shadow: 0 8px 16px -4px var(--main-color-bg);
-      }
-      &::-webkit-search-cancel-button {
-        display: none;
-      }
-    }
-    .ais-SearchBox-loadingIndicator,
-    .ais-SearchBox-submit,
-    .ais-SearchBox-reset {
-      display: none;
-    }
-  }
-  .ais-Hits {
-    margin-top: 20px;
-    min-height: 300px;
+<style lang="scss" scoped>
+.local-search {
     height: 100%;
-    .no-result {
-      height: 300px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      .iconfont {
-        font-size: 40px;
-        margin-bottom: 12px;
-      }
-      .text {
-        font-size: 18px;
-        opacity: 0.6;
-      }
-    }
-    .search-list {
-      .search-item {
-        margin-bottom: 12px;
-        .title {
-          display: inline;
-          font-size: 16px;
-          margin-bottom: 6px;
-        }
-        .anchor {
-          margin-top: 6px;
-          color: var(--main-font-second-color);
-          font-size: 14px;
-          &::before {
-            content: "# ";
-          }
-        }
-        .content {
-          color: var(--main-font-second-color);
-          margin-top: 0.8rem;
-          font-size: 12px;
-          padding: 8px;
-          border-radius: 8px;
-        }
-        p {
-          margin: 0;
-          mark {
-            background-color: transparent;
-            color: var(--main-color);
-          }
-        }
-        &:last-child {
-          margin-bottom: 0;
-        }
-      }
-    }
-  }
-  .ais-Pagination {
-    margin-top: 20px;
-    .ais-Pagination-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      .ais-Pagination-item {
-        margin: 0 4px;
-        width: 30px;
-        height: 30px;
-        border-radius: 8px;
-        transition: background-color 0.3s;
-        cursor: pointer;
-        .ais-Pagination-link {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 100%;
-          height: 100%;
-          &:hover {
-            color: var(--main-font-color);
-          }
-        }
-        &:hover {
-          color: var(--main-font-color);
-          background-color: var(--main-color);
-          .ais-Pagination-link {
-            color: var(--main-card-border);
-          }
-        }
-        &.ais-Pagination-item--selected {
-          font-weight: bold;
-          background-color: var(--main-color);
-          .ais-Pagination-link {
-            color: var(--main-card-border);
-          }
-        }
-        &.ais-Pagination-item--disabled,
-        &.ais-Pagination-item--nextPage,
-        &.ais-Pagination-item--lastPage {
-          opacity: 0.8;
-        }
-      }
-    }
-  }
-  .ais-Stats {
     display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 20px;
-    opacity: 0.8;
-    font-size: 14px;
-    .power {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      font-size: 16px;
-      opacity: 0.6;
-      transition:
-        color 0.3s,
-        opacity 0.3s;
-      .iconfont {
-        margin-right: 4px;
-        font-size: 20px;
-        transition: color 0.3s;
-      }
-      .name {
-        font-weight: bold;
-      }
-      &:hover {
-        opacity: 1;
-        color: var(--main-color);
-        .iconfont {
-          color: var(--main-color);
+    flex-direction: column;
+
+    .search-box {
+        margin-bottom: 20px;
+
+        .search-input {
+            width: 100%;
+            height: 45px;
+            outline: none;
+            border-radius: 12px;
+            font-size: 16px;
+            padding: 0 1.2rem;
+            color: var(--main-font-color);
+            font-family: var(--main-font-family);
+            border: 1px solid var(--main-card-border);
+            background-color: var(--main-card-second-background);
+            transition: all 0.3s;
+
+            &:focus {
+                border-color: var(--main-color);
+                box-shadow: 0 8px 16px -4px var(--main-color-bg);
+            }
         }
-      }
     }
-    @media (max-width: 512px) {
-      justify-content: center;
-      .information {
-        display: none;
-      }
+
+    .search-results,
+    .search-tip {
+        min-height: 300px;
+        max-height: 60vh;
+        overflow-y: auto;
+        padding-right: 4px;
+
+        &::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: var(--main-card-border);
+            border-radius: 10px;
+        }
     }
-  }
+
+    .search-tip,
+    .no-result {
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0.6;
+
+        .iconfont {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .text {
+            font-size: 16px;
+        }
+    }
+
+    .search-list {
+        .search-item {
+            padding: 1rem;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+
+            .title {
+                font-size: 18px;
+                font-weight: bold;
+                margin-bottom: 8px;
+                color: var(--main-color);
+            }
+
+            .meta-info {
+                display: flex;
+                gap: 12px;
+                font-size: 13px;
+                margin-bottom: 8px;
+                opacity: 0.7;
+
+                .iconfont {
+                    font-size: 14px;
+                    margin-right: 4px;
+                }
+            }
+
+            .content {
+                background-color: var(--main-card-second-background);
+                padding: 8px 12px;
+                border-radius: 8px;
+                font-size: 14px;
+                line-height: 1.6;
+                opacity: 0.9;
+            }
+
+            :deep(mark) {
+                background-color: var(--main-color);
+                color: #fff;
+                padding: 0 2px;
+                border-radius: 2px;
+            }
+
+            &:hover {
+                transform: translateY(-2px);
+                border-color: var(--main-color);
+            }
+        }
+    }
+
+    .information {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 20px;
+        padding-top: 15px;
+        border-top: 1px solid var(--main-card-border);
+        opacity: 0.8;
+        font-size: 14px;
+
+        .power {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            opacity: 0.6;
+
+            .iconfont {
+                font-size: 18px;
+            }
+
+            .name {
+                font-weight: bold;
+            }
+        }
+    }
 }
 </style>

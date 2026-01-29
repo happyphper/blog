@@ -10,13 +10,7 @@
               <div v-for="(item, index) in theme.navMore" :key="index" class="more-item">
                 <span class="more-name">{{ item.name }}</span>
                 <div class="more-list">
-                  <a
-                    v-for="(link, i) in item.list"
-                    :key="i"
-                    :href="link.url"
-                    class="more-link"
-                    target="_blank"
-                  >
+                  <a v-for="(link, i) in item.list" :key="i" :href="link.url" class="more-link" target="_blank">
                     <img class="link-icon" :src="link.icon" :alt="link.name" />
                     <span class="link-name">{{ link.name }}</span>
                   </a>
@@ -34,12 +28,8 @@
             <div v-for="(item, index) in theme.nav" :key="index" class="menu-item">
               <span class="link-btn"> {{ item.text }}</span>
               <div v-if="item.items" class="link-child">
-                <span
-                  v-for="(child, childIndex) in item.items"
-                  :key="childIndex"
-                  class="link-child-btn"
-                  @click="router.go(child.link)"
-                >
+                <span v-for="(child, childIndex) in item.items" :key="childIndex" class="link-child-btn"
+                  @click="router.go(child.link)">
                   <i v-if="child.icon" :class="`iconfont icon-${child.icon}`" />
                   {{ child.text }}
                 </span>
@@ -51,66 +41,17 @@
           </span>
         </div>
         <div class="right-nav">
-          <!-- 开往 -->
-          <a
-            class="menu-btn nav-btn travellings"
-            title="开往-友链接力"
-            href="https://www.travellings.cn/go.html"
-            target="_blank"
-          >
-            <i class="iconfont icon-subway"></i>
-          </a>
-          <!-- 随机文章 -->
-          <div
-            class="menu-btn nav-btn"
-            title="随机前往一篇文章"
-            @click="router.go(shufflePost(theme.postData))"
-          >
-            <i class="iconfont icon-shuffle"></i>
-          </div>
           <!-- 搜索 -->
-          <div
-            v-if="theme.search.enable"
-            class="menu-btn nav-btn"
-            title="全站搜索"
-            @click="store.changeShowStatus('searchShow')"
-          >
+          <div v-if="theme.search.enable" class="nav-search" @click="store.changeShowStatus('searchShow')">
             <i class="iconfont icon-search"></i>
+            <input type="text" placeholder="搜索文章..." readonly />
           </div>
-          <!-- 中控台 -->
-          <div
-            id="open-control"
-            class="menu-btn nav-btn pc"
-            title="打开中控台"
-            @click="store.changeShowStatus('controlShow')"
-          >
-            <i class="iconfont icon-dashboard" />
-          </div>
-          <!-- 返回顶部 -->
-          <div
-            :class="[
-              'to-top',
-              'menu-btn',
-              { hidden: scrollData.height === 0, long: scrollData.percentage > 90 },
-            ]"
-            title="返回顶部"
-            @click="smoothScrolling"
-          >
-            <div class="to-top-btn">
-              <Transition name="fade" mode="out-in">
-                <span :key="scrollData.percentage > 90" class="num">
-                  {{ scrollData.percentage <= 90 ? scrollData.percentage : "返回顶部" }}
-                </span>
-              </Transition>
-              <i class="iconfont icon-up"></i>
-            </div>
+          <!-- 主题切换 -->
+          <div class="menu-btn nav-btn" title="主题模式切换" @click="store.changeThemeType">
+            <i :class="`iconfont icon-${store.themeType}`"></i>
           </div>
           <!-- 移动端菜单 -->
-          <div
-            class="menu-btn nav-btn mobile"
-            title="打开菜单"
-            @click="store.changeShowStatus('mobileMenuShow')"
-          >
+          <div class="menu-btn nav-btn mobile" title="打开菜单" @click="store.changeShowStatus('mobileMenuShow')">
             <i class="iconfont icon-toc" />
           </div>
         </div>
@@ -144,6 +85,7 @@ const { site, theme, frontmatter, page } = useData();
   overflow: hidden;
   z-index: 1000;
   animation: show 0.3s backwards;
+
   .main-nav {
     display: flex;
     flex-direction: row;
@@ -158,6 +100,7 @@ const { site, theme, frontmatter, page } = useData();
     transition:
       background-color 0.3s,
       backdrop-filter 0.3s;
+
     &::after {
       content: "";
       position: absolute;
@@ -168,13 +111,16 @@ const { site, theme, frontmatter, page } = useData();
       background-color: var(--main-card-border);
       transition: opacity 0.3s;
     }
+
     &.top {
       background-color: transparent;
       outline: 0px;
+
       &::after {
         opacity: 0;
       }
     }
+
     &.top,
     &.up {
       .nav-all {
@@ -182,11 +128,13 @@ const { site, theme, frontmatter, page } = useData();
           transform: translateY(0);
           opacity: 1;
         }
+
         .site-title {
           transform: translateY(50px);
           opacity: 0;
         }
       }
+
       @media (max-width: 768px) {
         .nav-center {
           top: -80px;
@@ -194,6 +142,7 @@ const { site, theme, frontmatter, page } = useData();
       }
     }
   }
+
   .nav-all {
     position: relative;
     width: 100%;
@@ -203,17 +152,21 @@ const { site, theme, frontmatter, page } = useData();
     display: grid;
     grid-template-columns: minmax(200px, 1fr) auto minmax(200px, 1fr);
     align-items: center;
+
     .left-nav {
       display: flex;
       flex-direction: row;
       align-items: center;
       min-width: 200px;
+
       .more-menu {
         position: relative;
         margin-right: 4px;
+
         @media (max-width: 512px) {
           display: none;
         }
+
         .more-card {
           position: absolute;
           left: 0;
@@ -222,33 +175,40 @@ const { site, theme, frontmatter, page } = useData();
           visibility: hidden;
           transform-origin: left top;
           transform: scale(0.8) translateY(-5px);
+
           .more-item {
             margin-top: 0.8rem;
+
             &:first-child {
               margin-top: 0;
             }
+
             .more-name {
               font-size: 14px;
               display: inline-block;
               color: var(--main-font-second-color);
               margin-bottom: 0.6rem;
             }
+
             .more-list {
               display: grid;
               gap: 0.8rem;
               grid-template-columns: 1fr 1fr;
+
               .more-link {
                 display: flex;
                 align-items: center;
                 width: 150px;
                 padding: 6px 8px;
                 border-radius: 8px;
+
                 .link-icon {
                   width: 24px;
                   height: 24px;
                   border-radius: 50%;
                   margin-right: 8px;
                 }
+
                 &:hover {
                   color: var(--main-card-background);
                   background-color: var(--main-color);
@@ -256,6 +216,7 @@ const { site, theme, frontmatter, page } = useData();
               }
             }
           }
+
           &::after {
             content: "";
             position: absolute;
@@ -265,10 +226,12 @@ const { site, theme, frontmatter, page } = useData();
             height: 30px;
             z-index: 1;
           }
+
           &:hover {
             border-color: var(--main-color);
           }
         }
+
         &:hover {
           .more-card {
             opacity: 1;
@@ -277,6 +240,7 @@ const { site, theme, frontmatter, page } = useData();
           }
         }
       }
+
       .site-name {
         position: relative;
         display: flex;
@@ -291,6 +255,7 @@ const { site, theme, frontmatter, page } = useData();
         text-overflow: ellipsis;
         transition: transform 0.3s;
         cursor: pointer;
+
         &::after {
           content: "\e032";
           font-family: "iconfont";
@@ -309,18 +274,21 @@ const { site, theme, frontmatter, page } = useData();
           opacity: 0;
           transition: opacity 0.3s;
         }
+
         @media (min-width: 768px) {
           &:hover {
             &::after {
               opacity: 1;
             }
           }
+
           &:active {
             transform: scale(0.95);
           }
         }
       }
     }
+
     .nav-center {
       display: flex;
       align-items: center;
@@ -330,6 +298,7 @@ const { site, theme, frontmatter, page } = useData();
       height: 60px;
       overflow: hidden;
       transition: top 0.3s;
+
       .site-menu {
         position: absolute;
         width: fit-content;
@@ -344,6 +313,7 @@ const { site, theme, frontmatter, page } = useData();
         transition:
           transform 0.3s,
           opacity 0.3s;
+
         .menu-item {
           position: relative;
           padding: 0 0.4rem;
@@ -352,6 +322,7 @@ const { site, theme, frontmatter, page } = useData();
           align-items: center;
           margin: auto;
           cursor: pointer;
+
           .link-btn {
             display: flex;
             align-items: center;
@@ -366,6 +337,7 @@ const { site, theme, frontmatter, page } = useData();
               color 0.3s,
               background-color 0.3s;
           }
+
           .link-child {
             position: absolute;
             top: 35px;
@@ -385,6 +357,7 @@ const { site, theme, frontmatter, page } = useData();
               opacity 0.3s,
               visibility 0.3s,
               transform 0.3s;
+
             &::before {
               content: "";
               position: absolute;
@@ -393,6 +366,7 @@ const { site, theme, frontmatter, page } = useData();
               width: 100%;
               height: 20px;
             }
+
             .link-child-btn {
               display: flex;
               align-items: center;
@@ -405,22 +379,26 @@ const { site, theme, frontmatter, page } = useData();
                 padding 0.3s,
                 background-color 0.3s,
                 box-shadow 0.3s;
+
               .iconfont {
                 margin-right: 8px;
                 font-size: 20px;
                 transition: color 0.3s;
               }
+
               &:hover {
                 color: var(--main-card-background);
                 background-color: var(--main-color);
                 box-shadow: 0 8px 12px -3px var(--main-color-bg);
                 padding: 0.6rem 1rem;
+
                 .iconfont {
                   color: var(--main-card-background);
                 }
               }
             }
           }
+
           &:first-child {
             .link-child {
               &::after {
@@ -433,6 +411,7 @@ const { site, theme, frontmatter, page } = useData();
               }
             }
           }
+
           &:last-child {
             .link-child {
               &::after {
@@ -445,11 +424,13 @@ const { site, theme, frontmatter, page } = useData();
               }
             }
           }
+
           &:hover {
             .link-btn {
               color: var(--main-card-background);
               background-color: var(--main-color);
             }
+
             .link-child {
               transform: translateY(0) scale(1);
               opacity: 1;
@@ -458,6 +439,7 @@ const { site, theme, frontmatter, page } = useData();
           }
         }
       }
+
       .site-title {
         position: relative;
         display: inline-block;
@@ -475,6 +457,7 @@ const { site, theme, frontmatter, page } = useData();
           transform 0.3s,
           opacity 0.3s;
         cursor: pointer;
+
         &::after {
           content: "返回顶部";
           position: absolute;
@@ -493,14 +476,17 @@ const { site, theme, frontmatter, page } = useData();
           transition: opacity 0.3s;
           z-index: 1;
         }
+
         &:hover {
           &::after {
             opacity: 1;
           }
         }
+
         &:active {
           transform: scale(0.95);
         }
+
         @media (max-width: 768px) {
           &::after {
             display: none;
@@ -508,26 +494,111 @@ const { site, theme, frontmatter, page } = useData();
         }
       }
     }
+
     .right-nav {
       display: flex;
       flex-direction: row;
       justify-content: flex-end;
       align-items: center;
       min-width: 200px;
+
+      .nav-search {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 38px;
+        width: 220px;
+        padding: 0 12px;
+        margin-right: 1.2rem;
+        background-color: var(--main-card-second-background);
+        border: 1px solid var(--main-card-border);
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+        &:hover {
+          border-color: var(--main-color);
+          background-color: var(--main-card-background);
+          box-shadow: 0 8px 16px -4px var(--main-border-shadow);
+          transform: translateY(-1px);
+
+          .iconfont {
+            color: var(--main-color);
+            opacity: 1;
+          }
+
+          input {
+            opacity: 0.9;
+          }
+        }
+
+        .iconfont {
+          font-size: 18px;
+          margin-right: 10px;
+          opacity: 0.6;
+          transition: all 0.3s;
+        }
+
+        input {
+          flex: 1;
+          width: 100%;
+          border: none;
+          outline: none;
+          background: transparent;
+          color: var(--main-font-color);
+          font-size: 14px;
+          font-family: inherit;
+          cursor: pointer;
+          opacity: 0.5;
+          transition: opacity 0.3s;
+
+          &::placeholder {
+            color: var(--main-font-color);
+          }
+        }
+
+        .search-key {
+          padding: 3px 8px;
+          background-color: var(--main-card-border);
+          border-radius: 6px;
+          font-size: 11px;
+          font-weight: bold;
+          opacity: 0.4;
+          letter-spacing: 0.5px;
+          transition: opacity 0.3s;
+        }
+
+        @media (max-width: 1024px) {
+          width: 180px;
+
+          .search-key {
+            display: none;
+          }
+        }
+
+        @media (max-width: 768px) {
+          display: none;
+        }
+      }
+
       .menu-btn {
         margin-left: 0.5rem;
+
         &.mobile {
           display: none;
         }
+
         @media (max-width: 768px) {
           &.mobile {
             display: flex;
           }
+
           &.pc {
             display: none;
           }
         }
       }
+
       .to-top {
         position: relative;
         display: flex;
@@ -537,6 +608,7 @@ const { site, theme, frontmatter, page } = useData();
         height: 35px;
         transition: all 0.3s;
         cursor: pointer;
+
         .to-top-btn {
           position: absolute;
           display: flex;
@@ -550,12 +622,14 @@ const { site, theme, frontmatter, page } = useData();
             width 0.3s,
             height 0.3s,
             background-color 0.3s;
+
           .num {
             position: absolute;
             font-size: 12px;
             color: var(--main-card-background);
             transition: opacity 0.1s;
           }
+
           .icon-up {
             position: absolute;
             color: var(--main-card-background);
@@ -570,46 +644,57 @@ const { site, theme, frontmatter, page } = useData();
           transform: scale(0);
           margin: 0;
         }
+
         &.long {
           width: 80px;
+
           .to-top-btn {
             width: 70px;
           }
         }
+
         &:hover {
           .to-top-btn {
             width: 35px;
             height: 35px;
             background-color: var(--main-color);
+
             .num {
               opacity: 0;
             }
+
             .icon-up {
               opacity: 1;
             }
           }
+
           &.long {
             width: 80px;
+
             .to-top-btn {
               width: 80px;
               height: 35px;
             }
           }
         }
+
         &:active {
           transform: scale(0.9);
         }
       }
     }
+
     @media (max-width: 768px) {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       padding: 1rem 1.5rem;
+
       .left-nav,
       .right-nav {
         min-width: auto;
       }
+
       .nav-center {
         // display: none;
         position: absolute;
@@ -618,6 +703,7 @@ const { site, theme, frontmatter, page } = useData();
         background-color: var(--main-card-background);
         border-bottom: 1px solid var(--main-card-border);
         z-index: 100;
+
         .site-title {
           font-size: 15px;
           height: auto;
@@ -625,6 +711,7 @@ const { site, theme, frontmatter, page } = useData();
       }
     }
   }
+
   .nav-btn {
     display: flex;
     align-items: center;
@@ -635,6 +722,7 @@ const { site, theme, frontmatter, page } = useData();
     transition: background-color 0.3s;
     border-radius: 50%;
     cursor: pointer;
+
     .iconfont {
       font-size: 20px;
       line-height: 1;
@@ -642,8 +730,10 @@ const { site, theme, frontmatter, page } = useData();
         color 0.3s,
         opacity 0.3s;
     }
+
     &:hover {
       background-color: var(--main-color);
+
       .iconfont {
         color: var(--main-card-background);
       }
