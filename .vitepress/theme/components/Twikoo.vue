@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted } from 'vue';
-import { init } from 'twikoo';
+
 
 const props = defineProps({
     envId: {
@@ -10,10 +10,12 @@ const props = defineProps({
 });
 
 onMounted(() => {
-    init({
-        envId: props.envId,
-        el: '#twikoo',
-        lang: 'zh-CN', // 强制中文
+    import('twikoo').then((twikoo) => {
+        twikoo.init({
+            envId: props.envId,
+            el: '#twikoo',
+            lang: 'zh-CN', // 强制中文
+        });
     });
 });
 </script>
