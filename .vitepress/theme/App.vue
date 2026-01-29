@@ -74,7 +74,6 @@ const changeSiteThemeType = () => {
   const themeClasses = {
     dark: "dark",
     light: "light",
-    auto: "auto",
   };
   // 必要数据
   const htmlElement = document.documentElement;
@@ -84,13 +83,7 @@ const changeSiteThemeType = () => {
     htmlElement.classList.remove(themeClass);
   });
   // 添加新的 class
-  if (themeType.value === "auto") {
-    // 根据当前操作系统颜色方案更改明暗主题
-    const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const autoThemeClass = systemPrefersDark ? themeClasses.dark : themeClasses.light;
-    htmlElement.classList.add(autoThemeClass);
-    themeValue.value = autoThemeClass;
-  } else if (themeClasses[themeType.value]) {
+  if (themeClasses[themeType.value]) {
     htmlElement.classList.add(themeClasses[themeType.value]);
     themeValue.value = themeClasses[themeType.value];
   }

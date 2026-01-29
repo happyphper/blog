@@ -54,11 +54,14 @@
                 </div>
             </div>
         </div>
+        <!-- 留言板 -->
+        <Twikoo envId="https://twikoo.longbao.wang" />
     </div>
 </template>
 
 <script setup>
 import { mainStore } from "@/store";
+import Twikoo from '../components/Twikoo.vue';
 const { theme } = useData();
 const store = mainStore();
 

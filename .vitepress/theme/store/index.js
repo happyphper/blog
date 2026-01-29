@@ -4,7 +4,7 @@ export const mainStore = defineStore("main", {
   state: () => {
     return {
       // 主题类别
-      themeType: "auto",
+      themeType: "light",
       themeValue: "light",
       // banner
       bannerType: "half",
@@ -83,23 +83,11 @@ export const mainStore = defineStore("main", {
     },
     // 切换明暗模式
     changeThemeType() {
-      this.themeType === "auto"
+      this.themeType === "light"
         ? (this.themeType = "dark")
-        : this.themeType === "dark"
-          ? (this.themeType = "light")
-          : (this.themeType = "auto");
+        : (this.themeType = "light");
       // 弹窗提示
-      if (typeof $message !== "undefined") {
-        const text =
-          this.themeType === "light"
-            ? "浅色模式"
-            : this.themeType === "dark"
-              ? "深色模式"
-              : "跟随系统";
-        $message.info("当前主题为" + text, {
-          duration: 1500,
-        });
-      }
+
     },
   },
   // 数据持久化
