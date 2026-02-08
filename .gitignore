@@ -34,3 +34,5 @@ themeConfig.mjs
 *.sw?
 
 .vercel
+
+examples/
