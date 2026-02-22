@@ -9,6 +9,10 @@ categories: [鸿蒙适配]
 
 # Flutter for OpenHarmony：Flutter 三方库 flutter_platform_widgets 让 UI 一套代码多终端原生体验（适配转换引擎）
 
+![flutter_platform_widgets](images/flutter_platform_widgets.png)
+
+
+
 ## 前言
 
 在打造鸿蒙（OpenHarmony）跨平台应用时，开发者常面临一个视觉痛点：如果直接使用 Material Design，在鸿蒙系统上可能会显得有些“外来感”；而如果全部手写两套 UI（Material 对应 Android/鸿蒙，Cupertino 对应 iOS），代码维护量将翻倍。

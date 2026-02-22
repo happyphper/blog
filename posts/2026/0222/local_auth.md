@@ -9,6 +9,10 @@ categories: [鸿蒙适配]
 
 # Flutter for OpenHarmony：Flutter 三方库 local_auth — 集成指纹与人脸解锁的安全堡垒（生物核身引擎）
 
+![local_auth](images/local_auth.png)
+
+
+
 ## 前言
 
 在鸿蒙（OpenHarmony）金、金融或者是含有极端私密属性的应用中，确保“操作者本人”是业务安全的底线。你是否想要让用户在点击“支付”或“查看私密便签”时，极其优雅地唤起鸿蒙系统原生的指纹录入或人脸识别界面？

@@ -9,6 +9,10 @@ categories: [鸿蒙适配]
 
 # Flutter for OpenHarmony：Flutter 三方库 latlong2 专业地图坐标系转换（地理信息计算）
 
+![latlong2](images/latlong2.png)
+
+
+
 ## 前言
 
 在鸿蒙（OpenHarmony）高德、腾讯或百度地图的开发实践中，地理坐标（经纬度）的处理是基础。无论是计算两个地点之间的直线距离、计算路段的方向角，还是对一系列路径点进行平滑过滤，都离不开严谨的数学算法。

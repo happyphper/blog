@@ -9,6 +9,10 @@ categories: [鸿蒙适配]
 
 # Flutter for OpenHarmony：Flutter 三方库 leancode_lint — 企业级 Dart 代码规范强制审查（规范治理引擎）
 
+![leancode_lint](images/leancode_lint.png)
+
+
+
 ## 前言
 
 在鸿蒙（OpenHarmony）大型应用开发过程中，团队协作最怕的就是代码风格不一、因为低级书写错误导致应用崩溃或是运行效率低下。如果你觉得 Dart 原生的 `flutter_lints` 过于温和，想要一套能涵盖异步死锁、状态泄露、以及架构反模式等更深层次的代码健康检查方案，那么你一定要试试企业级的 Lint 工具。

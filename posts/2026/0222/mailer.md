@@ -9,6 +9,10 @@ categories: [鸿蒙适配]
 
 # Flutter for OpenHarmony：Flutter 三方库 mailer — 原生邮件极速投递（通信发送引擎）
 
+![mailer](images/mailer.png)
+
+
+
 ## 前言
 
 在鸿蒙（OpenHarmony）办公 OA 或者含有极速客服反馈（例如报错一键提交）业务逻辑的应用中，让用户直接调用系统邮件客户端可能会打断他们的业务工作流。你是否想过在应用内部“悄无声息”地向公司的客户邮箱发送一封包含业务日志甚至报错截图的极其专业的 HTML 邮件？

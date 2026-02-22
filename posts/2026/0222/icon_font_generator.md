@@ -9,6 +9,10 @@ categories: [鸿蒙适配]
 
 # Flutter for OpenHarmony：Flutter 三方库 icon_font_generator 自动化图标字体工作流（资产管理引擎）
 
+![icon_font_generator](images/icon_font_generator.png)
+
+
+
 ## 前言
 
 在鸿蒙（OpenHarmony）应用开发中，使用 `IconFont`（图标字体）是优化性能和包体积的最佳实践：一张 100 多个图标的字体文件（.ttf）往往只有几十 KB，且支持无限缩放和极其随意的颜色更改。

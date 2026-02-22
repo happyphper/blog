@@ -9,6 +9,10 @@ categories: [鸿蒙适配]
 
 # Flutter for OpenHarmony：Flutter 三方库 hive_flutter — 超高性能本地 NoSQL 存储（轻量数据库引擎）
 
+![hive_flutter](images/hive_flutter.png)
+
+
+
 ## 前言
 
 在鸿蒙（OpenHarmony）大前端开发中，如何极其高效地存储用户的偏好设置、离线缓存或是复杂的业务对象？传统的 SQLite 虽然强大但太过繁重，而 SharedPreferences/MMKV 虽然快但不支持复杂对象的层级存储。

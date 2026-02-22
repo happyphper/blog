@@ -9,6 +9,10 @@ categories: [鸿蒙适配]
 
 # Flutter for OpenHarmony：Flutter 三方库 loggy 极其优雅的日志分级管理（专业日志引擎）
 
+![loggy](images/loggy.png)
+
+
+
 ## 前言
 
 在鸿蒙（OpenHarmony）大工程中，杂乱无章的 `print` 语句是开发者的噩梦。当你试图在成千上万行调试信息中定位一个特定的 API 异常时，你会发现单纯的文本输出缺乏分级、标签和色彩识别。

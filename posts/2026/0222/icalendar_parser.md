@@ -9,6 +9,10 @@ categories: [鸿蒙适配]
 
 # Flutter for OpenHarmony：Flutter 三方库 icalendar_parser 精准解析与操作 iCal 日程（日历数据引擎）
 
+![icalendar_parser](images/icalendar_parser.png)
+
+
+
 ## 前言
 
 在鸿蒙（OpenHarmony）办公类或效率类应用的开发中，处理标准的日历数据（RFC 5545, iCalendar）是一个绕不开的需求。无论是导入外部的会议链接、学校的课表文件，还是同步云端的日程安排，iCalendar (.ics) 都是绝对的行业标准。

@@ -9,6 +9,10 @@ categories: [鸿蒙适配]
 
 # Flutter for OpenHarmony：Flutter 三方库 mcp_dart 接入模型上下文协议（智能代理引擎）
 
+![mcp_dart](images/mcp_dart.png)
+
+
+
 ## 前言
 
 随着 AI 大模型时代的全面到来，鸿蒙（OpenHarmony）应用正从“被动响应”转向“主动智能”。Anthropic 推出的 **MCP (Model Context Protocol)** 是一项革命性的标准，它允许 AI 代理无缝连接内容仓库、业务工具和实时数据映射。

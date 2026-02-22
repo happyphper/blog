@@ -9,6 +9,10 @@ categories: [鸿蒙适配]
 
 # Flutter for OpenHarmony：Flutter 三方库 flutter_simple_dependency_injection 解耦你的应用架构（依赖注入神器）
 
+![flutter_simple_dependency_injection](images/flutter_simple_dependency_injection.png)
+
+
+
 ## 前言
 
 随着鸿蒙（OpenHarmony）工程复杂度的提升，原本简单的代码结构会逐渐变得臃肿：Service 调用 Repository，Repository 调用 ApiClient，所有的构造函数都堆满了各种实例。这种“硬编码”的依赖关系会让单元测试和未来的功能扩展变得极其困难。

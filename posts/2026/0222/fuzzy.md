@@ -9,6 +9,10 @@ categories: [鸿蒙适配]
 
 # Flutter for OpenHarmony：Flutter 三方库 fuzzy 毫秒级实现模糊搜索（搜索算法引擎）
 
+![fuzzy](images/fuzzy.png)
+
+
+
 ## 前言
 
 在鸿蒙（OpenHarmony）应用中，搜索框是几乎所有列表页面的核心组件。普通的字符串 `contains` 匹配往往太死板，无法处理错别字、拼音首字母简写或词序颠倒的情况。
