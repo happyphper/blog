@@ -227,10 +227,3 @@ class _SuperBeautyDirectDBTestScreenState extends State<SuperBeautyDirectDBTestS
 2. **工厂注入**：通过 `databaseFactoryFfiWeb` 实现代码跨端复用。
 3. **鸿蒙适配**：重视多线程通信开销，优化长列表查询性能。
 4. **存储持久性**：底层基于 IndexedDB，数据不丢失。
-
-📦 **相关资源链接**：
-- 完整代码仓库：[AtomGit 示例专栏](https://atomgit.com/dragonbady/open-harmony-examples/tree/main/examples/sqflite_common_ffi_web)
-- 欢迎加入开源鸿蒙跨平台社区：[开源鸿蒙跨平台开发者社区](https://openharmonycrossplatform.csdn.net)
-
----
-*本文由 Antigravity 整理撰写，旨在助力开发者构建更强大的鸿蒙全场景应用。*

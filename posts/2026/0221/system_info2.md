@@ -221,10 +221,3 @@ class _SuperBeautyDirectDBTestScreenState extends State<SuperBeautyDirectDBTestS
 2. **架构适配**：为二进制分发和 Native 模块加载提供环境决策。
 3. **性能平衡**：基于硬件规格设计智能资源分配策略。
 4. **鸿蒙挑战**：应对未来可能收紧的系统访问权限，建立健壮的兜底机制。
-
-📦 **相关资源链接**：
-- 完整代码仓库：[AtomGit 示例专栏](https://atomgit.com/dragonbady/open-harmony-examples/tree/main/examples/system_info2)
-- 欢迎加入开源鸿蒙跨平台社区：[开源鸿蒙跨平台开发者社区](https://openharmonycrossplatform.csdn.net)
-
----
-*本文由 Antigravity 整理撰写，带你深入鸿蒙系统的核心，掌控软硬结合的奥秘。*

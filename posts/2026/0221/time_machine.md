@@ -222,10 +222,3 @@ class _SuperBeautyDirectDBTestScreenState extends State<SuperBeautyDirectDBTestS
 2. **时区权威**：内嵌 IANA 库，解决夏令时计算的顽疾。
 3. **不可变设计**：天生适配高并发场景，杜绝状态副作用。
 4. **适配鸿蒙**：注意异步初始化时机，优化启动首屏体验。
-
-📦 **相关资源链接**：
-- 完整代码仓库：[AtomGit 示例专栏](https://atomgit.com/dragonbady/open-harmony-examples/tree/main/examples/time_machine)
-- 欢迎加入开源鸿蒙跨平台社区：[开源鸿蒙跨平台开发者社区](https://openharmonycrossplatform.csdn.net)
-
----
-*本文由 Antigravity 整理撰写，带你跨越时区的边界，构建精准的鸿蒙全球化视野。*

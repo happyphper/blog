@@ -201,10 +201,3 @@ class _SuperBeautyDirectDBTestScreenState extends State<SuperBeautyDirectDBTestS
 2. **类型安全**：彻底杜绝字段拼写错误导致的运行时异常。
 3. **极佳的可维护性**：接口变动只需重新运行生成指令。
 4. **鸿蒙适配**：注意代码容量管理，按需模块化生成。
-
-📦 **相关资源链接**：
-- 完整代码仓库：[AtomGit 示例专栏](https://atomgit.com/dragonbady/open-harmony-examples/tree/main/examples/swagger_dart_code_generator)
-- 欢迎加入开源鸿蒙跨平台社区：[开源鸿蒙跨平台开发者社区](https://openharmonycrossplatform.csdn.net)
-
----
-*本文由 Antigravity 整理撰写，带你领略鸿蒙平台上的工程化进阶之路。*

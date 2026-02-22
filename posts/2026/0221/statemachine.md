@@ -263,10 +263,3 @@ class _SuperBeautyDirectDBTestScreenState extends State<SuperBeautyDirectDBTestS
 2. **逻辑透明**：所有的业务状态一目了然，极大地降低了代码维护成本。
 3. **鸿蒙适配**：在复杂的多设备同步场景下，通过状态机确立行为边界。
 4. **提升质量分**：结构化的代码编排有助于提升应用的稳健性和可测性。
-
-📦 **相关资源链接**：
-- 完整代码仓库：[AtomGit 示例专栏](https://atomgit.com/dragonbady/open-harmony-examples/tree/main/examples/statemachine)
-- 欢迎加入开源鸿蒙跨平台社区：[开源鸿蒙跨平台开发者社区](https://openharmonycrossplatform.csdn.net)
-
----
-*本文由 Antigravity 整理撰写，助力每一名鸿蒙开发者构建坚不可摧的业务系统。*
