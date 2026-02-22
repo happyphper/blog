@@ -2,6 +2,9 @@
 
 # Flutter for OpenHarmony：gql_http_link — 开启鸿蒙端的 GraphQL 高效请求链路
 
+![gql_http_link](images/gql_http_link.png)
+
+
 ## 前言
 
 在现代前端开发中，相比于传统的 RESTful API，**GraphQL** 以其精准的数据获取能力（Query exactly what you need）极大地提升了前后端数据交互的效率。尤其是在需要频繁对接复杂后端、减少网络负载的鸿蒙跨平台应用中，GraphQL 更是不可或缺。

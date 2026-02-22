@@ -2,6 +2,9 @@
 
 # Flutter for OpenHarmony：http_mock_adapter — 建立完美的鸿蒙网络单元测试堡垒
 
+![http_mock_adapter](images/http_mock_adapter.png)
+
+
 ## 前言
 
 在现代移动应用开发中，网络请求往往占据了业务逻辑的绝大部分。然而，在进行单元测试或集成测试时，真实的 API 环境往往充满了不可控因素：服务器宕机、网络延迟、甚至是在离线环境下无法进行测试。

@@ -2,6 +2,9 @@
 
 # Flutter for OpenHarmony：jnigen — 自动化打通 Flutter 与原生代码的通信壁垒
 
+![jnigen](images/jnigen.png)
+
+
 
 ## 前言
 

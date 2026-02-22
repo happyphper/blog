@@ -2,6 +2,9 @@
 
 # Flutter for OpenHarmony：index_generator — 自动化构建鸿蒙组件库索引
 
+![index_generator](images/index_generator.png)
+
+
 ## 前言
 
 在进行 **Flutter for OpenHarmony** 中大型项目开发时，我们往往会创建大量的业务组件、服务类或工具函数。如果每一个文件都需要在外面手动进行 `export`，不仅容易被遗忘，且管理起来极其繁琐。
