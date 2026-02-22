@@ -2,6 +2,9 @@
 
 # Flutter for OpenHarmony：async_task — 驾驭鸿蒙并发异步任务流
 
+![async_task](images/async_task.png)
+
+
 ## 前言
 
 随着鸿蒙设备（OpenHarmony）性能的不断跃升，应用承载的业务逻辑也愈发沉重。从大规模数据解析、高质量图像处理，到复杂的 AI 算法模型，这些操作如果全部挤在主 UI 线程中，难免会导致掉帧和卡顿。

@@ -2,6 +2,9 @@
 
 # Flutter for OpenHarmony：binarize — 卓越的二进制序列化与数据封包利器
 
+![binarize](images/binarize.png)
+
+
 ## 前言
 
 在高性能移动应用中，数据传输的效率直接决定了系统的吞吐量和延迟。虽然 JSON 格式由于其良好的可读性成为了主流，但在处理大规模结构化数据、传感器高频采样流或者是底层协议对接时，JSON 的字符解析开销和臃肿的体积往往会成为鸿蒙（OpenHarmony）应用性能的瓶颈。

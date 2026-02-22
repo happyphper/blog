@@ -2,6 +2,9 @@
 
 # Flutter for OpenHarmony：amplify_core — 开启鸿蒙应用的全球化云端连接器
 
+![amplify_core](images/amplify_core.png)
+
+
 ## 前言
 
 在进行 **Flutter for OpenHarmony** 开发时，构建具备高可靠、可扩展能力的云端业务是关键。无论是处理全球范围内的身份认证、大规模的非结构化存储，还是实时的数据同步。
