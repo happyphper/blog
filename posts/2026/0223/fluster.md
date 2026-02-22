@@ -2,6 +2,9 @@
 
 # Flutter for OpenHarmony：fluster — 亿级地理空间点聚合实战
 
+![fluster](images/fluster.png)
+
+
 
 ## 前言
 

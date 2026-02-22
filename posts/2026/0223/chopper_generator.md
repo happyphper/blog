@@ -2,6 +2,9 @@
 
 # Flutter for OpenHarmony：chopper_generator — 自动化构建鸿蒙端类型安全的 RESTful API
 
+![chopper_generator](images/chopper_generator.png)
+
+
 ## 前言
 
 在进行 **Flutter for OpenHarmony** 开发时，处理繁杂的网络请求是项基本但机械的工作。如果手动编写每一个 API 请求、解析回包然后再映射为 Model，不仅代码冗余，且在接口变更时极易遗漏。

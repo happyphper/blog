@@ -2,6 +2,9 @@
 
 # Flutter for OpenHarmony：dart_openai — 激发鸿蒙应用的 AIGC 无限创意
 
+![dart_openai](images/dart_openai.png)
+
+
 ## 前言
 
 随着生成式 AI（AIGC）浪潮席卷全球，将大语言模型（LLM）的智慧集成到移动应用中已成为大势所趋。无论是智能对话、代码生成，还是图像创作，AI 正在重塑我们的交互方式。

@@ -2,6 +2,9 @@
 
 # Flutter for OpenHarmony：browser_launcher — 让鸿蒙应用无缝跳转外部浏览器
 
+![browser_launcher](images/browser_launcher.png)
+
+
 ## 前言
 
 在移動應用開發中，我们经常需要实现从应用内部跳转到系统浏览器来打开特定网页的需求。例如：展示长篇的服务协议、跳转到官方活动页面，或者引导用户下载三方资源。

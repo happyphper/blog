@@ -2,6 +2,9 @@
 
 # Flutter for OpenHarmony：dart_mcp — 开启鸿蒙端的 AI Agent 通信协议新纪元
 
+![dart_mcp](images/dart_mcp.png)
+
+
 ## 前言
 
 随着生成式 AI 的爆发，**Model Context Protocol (MCP)** 正逐渐成为连接大型语言模型（LLM）与外部工具（Tools）、数据源（Resources）及上下（Context）的标准开放协议。它由 Anthropic 发起，旨在解决 AI 代理在获取现实世界信息时的碎片化问题。

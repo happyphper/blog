@@ -2,6 +2,9 @@
 
 # Flutter for OpenHarmony：dart_frog_web_socket — 在鸿蒙端构建极简高性能 WebSocket 服务
 
+![dart_frog_web_socket](images/dart_frog_web_socket.png)
+
+
 ## 前言
 
 随着鸿蒙（OpenHarmony）系统不仅在移动端，更在智能家居、工业互联等领域的大放异彩，设备间的实时低延迟通信变得愈发关键。有时我们需要在鸿蒙设备上直接运行一个轻量级的服务端，来接收来自多个传感器的实时数据流。

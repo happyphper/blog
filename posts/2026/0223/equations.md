@@ -2,6 +2,9 @@
 
 # Flutter for OpenHarmony：equations — 实现跨平台的高性能代数运算
 
+![equations](images/equations.png)
+
+
 ## 前言
 
 在工程、教育及科研类应用中，数学公式的解析与数值求解是核心功能。无论是求解一元二次方程、计算矩阵特征值，还是进行非线性方程的数值迭代，都需要一套严谨且高效的数学引擎。

@@ -2,6 +2,9 @@
 
 # Flutter for OpenHarmony：build_web_compilers — 优化鸿蒙 Web 端的编译与分发效率
 
+![build_web_compilers](images/build_web_compilers.png)
+
+
 ## 前言
 
 随着鸿蒙（OpenHarmony）系统对 Web 技术栈的深度整合，越来越多的 Flutter 应用选择通过 Web 引擎分发到鸿蒙手机浏览器、平板元服务甚至是车载大屏中。在 **Flutter for OpenHarmony** 的全场景开发中，如何通过底层工具链优化 Web 产物的体积和执行效率是性能优化的关键点。

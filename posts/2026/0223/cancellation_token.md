@@ -2,6 +2,9 @@
 
 # Flutter for OpenHarmony：cancellation_token — 优雅掌控鸿蒙异步任务的生命周期
 
+![cancellation_token](images/cancellation_token.png)
+
+
 ## 前言
 
 在移动应用开发中，网络请求、文件 IO、甚至是复杂的 AI 运算通常都是异步执行的。然而，当用户在请求未完成时突然点击了“返回”按钮，或者快速切换了页面，这些仍在后台运行的“僵尸任务”不仅会浪费电量和网络资源，甚至可能在完成后尝试更新已销毁的 UI，导致应用崩溃。

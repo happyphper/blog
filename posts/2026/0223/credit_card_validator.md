@@ -2,6 +2,9 @@
 
 # Flutter for OpenHarmony：credit_card_validator — 提升鸿蒙金融应用的用户体验
 
+![credit_card_validator](images/credit_card_validator.png)
+
+
 ## 前言
 
 在涉及电商、支付及在线服务等场景的移动应用中，信用卡支付依旧是不可或缺的环节。用户输入信用卡信息时，如果能提供即时的格式确认、发卡机构识别以及精确的 Luhn 算法校验，不仅能极大提升支付点击率，还能有效阻断无效数据进入后端。

@@ -2,6 +2,9 @@
 
 # Flutter for OpenHarmony：google_geocoding_api — 让鸿蒙应用掌握全球地理位置解析
 
+![google_geocoding_api](images/google_geocoding_api.png)
+
+
 ## 前言
 
 在现代移动应用中，基于位置的服务（LBS）是交互的核心之一。无论是根据经纬度显示当前街道名称（逆地理编码），还是将用户输入的地址转换为地图上的精确坐标（地理编码），都需要一个强大且稳定的后端服务支撑。
