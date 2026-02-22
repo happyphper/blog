@@ -5,32 +5,46 @@ tags: [Flutter, OpenHarmony, 通知, 推送]
 categories: [鸿蒙适配]
 ---
 
-![](images/desktop_notifications.png)
-欢迎加入开源鸿蒙跨平台社区：https://openharmonycrossplatform.csdn.net
-# Flutter for OpenHarmony：Flutter 三方库 desktop_notifications 桌面系统级通知框架（跨端原生提醒推送）
+![desktop_notifications](images/desktop_notifications.png)
+
+欢迎加入开源鸿蒙跨平台社区：[开源鸿蒙跨平台开发者社区](https://openharmonycrossplatform.csdn.net)
+
+# Flutter for OpenHarmony：Flutter 三方库 desktop_notifications 桌面系统级通知框架
+
 ## 前言
-系统级通知弹窗（Notification）是促进移动端及桌面端应用用户留存的关键抓手。随着 OpenHarmony 的普及以及 PC 平板端多模态环境对丰富特性的追求，如果只设计在 APP 内的悬浮窗已经远远无法满足跨设备的沉浸需求。`desktop_notifications` 致力于成为原生桌面级别环境的桥通者。通过本篇文章，你将学会如何以优雅的最简代码触发底层的系统弹框及交互回调。
+
+系统级通知（Notification）是提升跨端应用用户留存率的关键。随着 OpenHarmony 在 PC 和平板端的发展，仅依靠 App 内的悬浮窗已无法满足多模态设备的系统级通知需求。`desktop_notifications` 致力于打破应用边界，成为原生桌面级通知的桥梁。本文将演示如何用最简代码触发系统原生弹窗并处理交互回调。
+
 ## 一、原理解析 / 概念介绍
+
 ### 1.1 基础概念
-`desktop_notifications` 提供了一个抽象客户端封装。您通过 API 扔出通知配置项后，核心插件负责将信息分发到 OS 当前绑定的推送及显示守护程序（类似于鸿蒙的高级通知系统能力 ANS），最终由系统的窗口管理器负责通知气泡的横幅出现、排版。
+
+`desktop_notifications` 提供了一个抽象的通知客户端层。开发者只需配置通知参数，插件会将信息分发到系统环境绑定的推送管家（类似于鸿蒙的 ANS 通知核心），最终由原生窗口系统负责气泡横幅的渲染和排版。
+
 ```mermaid
 sequenceDiagram
     participant Flutter 应用进程
-    participant 原生通讯管道 MethodChannel
+    participant 原生通讯 MethodChannel
     participant 鸿蒙底层通知槽位 (ANS)
     participant 用户视野桌面
-    Flutter 应用进程->>原生通讯管道 MethodChannel: 携带内容推送通知 (Title, Body)
-    原生通讯管道 MethodChannel->>鸿蒙底层通知槽位 (ANS): 申请本地弹窗鉴权
-    鸿蒙底层通知槽位 (ANS)->>用户视野桌面: 发出并维持通知气泡条目渲染
-    用户视野桌面-->>鸿蒙底层通知槽位 (ANS): 用户点击或者滑走提醒
-    鸿蒙底层通知槽位 (ANS)-->>Flutter 应用进程: 将销毁/动作信号回传给 Dart 监听器
+    Flutter 应用进程->>原生通讯 MethodChannel: 推送通知配置 (Title, Body 等)
+    原生通讯 MethodChannel->>鸿蒙底层通知槽位 (ANS): 申请本地弹窗鉴权
+    鸿蒙底层通知槽位 (ANS)->>用户视野桌面: 渲染并弹出通知气泡
+    用户视野桌面-->>鸿蒙底层通知槽位 (ANS): 用户点击或是忽略该通知
+    鸿蒙底层通知槽位 (ANS)-->>Flutter 应用进程: 将动作信号回传给 Dart 监听器
 ```
+
 ### 1.2 进阶概念
-- **轻量化回调监听**：这并不是只能进行单项操作，该库提供了操作结果的事件回显流（Event Channel），能够精准判断出一条消息是自然超时消失、被拦截还是被点击确认识别。
-- **免除三方服务器**：有别于需要对接厂商后台的推送通道服务，本库侧重于无需联网下的“本地”极速提醒调度。
+
+- **轻量化回调监听**：不仅支持单向推送，该库还提供了基于 Event Channel 的操作回显流，能够精准监听用户的“确认、拦截、忽略”等交互行为。
+- **免除三方服务器**：有别于需要对接厂商后台的推送通道，本库侧重于无需联网的纯本地极速系统提醒。
+
 ## 二、核心 API / 组件详解
+
 ### 2.1 派发基础系统通知
-首先我们需要生成 `NotificationsClient` 客户端，然后借助其发送内容。
+
+首先实例化 `NotificationsClient`，然后借助其下发信息内容。
+
 ```dart
 import 'package:desktop_notifications/desktop_notifications.dart';
 // 创建系统通知分发器实例
@@ -45,8 +59,11 @@ Future<void> popSystemNotify() async {
   );
 }
 ```
+
 ### 2.2 定义复杂的响应行为监听
-单方面发送是不够的，如果是一条确认授权提醒呢？需要提供后续判断逻辑。
+
+如遇权限请求等复杂场景，开发者可为其提供多向选择的动作按钮及回执判断。
+
 ```dart
 final notification = await client.notify(
   '鸿蒙权限请求安全监控',
@@ -63,13 +80,17 @@ notification.actionCallback?.listen((String actionKey) {
    }
 });
 ```
-<!-- IMAGE_PLACEHOLDER: 控制台输出带有不同按钮行为拦截结果的分析日志 -->
+
+<!-- IMAGE_PLACEHOLDER: [包含多种行为交互按钮并带有日志输出控制台的截屏] -->
 <!-- 类型: 截图 -->
-<!-- 设备: 分屏鸿蒙设备或开发套件 -->
-<!-- 内容: 控制台成功输出事件回传 -->
+<!-- 内容: 展现用户点击拦截后的控制台输出反馈流 -->
+
 ## 三、场景示例
-### 3.1 场景一：鸿蒙多任务后台完成提醒
-如果我们在实现一款压缩包管理器或者音乐应用下载大件工具。通过此组件提醒，让用户无需时刻开启软件等待结果。
+
+### 3.1 场景一：后台下载任务完成主动通知
+
+当应用实现大型文件解压或后台下载时，利用组件进行异步通知可释放用户的等待时间。
+
 ```dart
 class TransferManager {
   final _client = NotificationsClient();
@@ -90,8 +111,11 @@ class TransferManager {
   }
 }
 ```
-### 3.2 场景二：桌面日程软件的时钟唤醒播报
-鸿蒙原生平板的效率软件大多附带番茄钟。在特定时刻提供不打断全屏的安静系统消息是很雅致的做法。
+
+### 3.2 场景二：桌面效率软件时钟播报
+
+在开发具有番茄钟属性的效率工具时，系统横幅通知能在不中断用户全屏操作的前提下完成友好提示。
+
 ```dart
 import 'dart:async';
 void startPomodoro(int minutes) {
@@ -107,20 +131,23 @@ void startPomodoro(int minutes) {
   });
 }
 ```
-## 四、OpenHarmony 平台适配与最佳实践
-### 4.1 权限获取与限制前提
-在 OpenHarmony 进行移植的规范下，发出系统级的提醒不仅有接口，更有系统级的**权限管控**：
-如果您直接盲目调用，在大部分生产鸿蒙系统设备上可能会被强硬拒绝，所以第一法则：
-📌 **前提：仔细检阅工程文件权限申请**：
-确保您的应用 `module.json5` 和安全证书中配置了 `ohos.permission.NOTIFICATION_CONTROLLER` 或者应用主动通过对话框征得了用户接受发送通知。
-### 4.2 UI 多模态渲染适配策略
-#### （1）跨端屏幕显示尺寸考量
-通知的显示气泡可能是在鸿蒙手表的窄屏、也可能在 4K 宽带智屏的右下角。请尽量维持 `body` 在 30 个中文字符以内，超过可能引发平台默认机制采取的长串截断。
-#### （2）生命周边循环与销毁
-由于系统资源在鸿蒙中的极端珍稀限制。在程序遇到 `dispose` 生命周期要退出系统常驻时，请利用：
-✅ 推荐做法：通过 `client.close()` 安全关停掉这个分发器的关联通道，杜绝发生幽灵句柄（Ghost Handlers）。
-## 五、完整运行示例程序
-这是一段用于演练发送常规和带有互动选项操作的标准页面范例：
+
+## 四、OpenHarmony 平台适配挑战与最佳实践
+
+### 4.1 系统级通知权限约束
+
+调用系统级弹窗面临鸿蒙核心严格的权限安全管控。
+📌 **适配要求：** 务必在项目的 `module.json5` 配置内声明 `ohos.permission.NOTIFICATION_CONTROLLER`，且在初次启动时需要征求由于用户的通知许可放行，否则所有强求弹出的接口均会被默认吞没拦截。
+
+### 4.2 渲染排版与管道释放
+
+- **文字尺寸限制**：不同形态（手表、智屏等）设备对通知文案的截断阀值不一。请严格控制 `body` 在 30 中文字符以内以兼顾最小屏展示要求。
+- **防止幽灵监听池**：在应用执行 `dispose` 时，请务必执行 `client.close()` 安全销毁分发器句柄，防止应用被杀掉后依然留存在后台占用监听资源池。
+
+## 五、综合演示操作实验室
+
+这是一段具备标准功能展现及动作捕捉交互的简易实验室页：
+
 ```dart
 import 'package:flutter/material.dart';
 import 'package:desktop_notifications/desktop_notifications.dart';
@@ -204,14 +231,13 @@ class _ControlPanelPageState extends State<ControlPanelPage> {
   }
 }
 ```
-<!-- IMAGE_PLACEHOLDER: 鸿蒙手机成功收到顶部通知及交互按键变化的结果 -->
+
+<!-- IMAGE_PLACEHOLDER: [包含设备成功收到弹窗及点击动作记录更新的截图] -->
 <!-- 类型: 截图 -->
-<!-- 设备: 鸿蒙设备/模拟器界面 -->
-<!-- 内容: 控制面板及弹出的操作系统通知横幅 -->
+<!-- 内容: 系统通知横幅显示与主界面文本反馈联动 -->
+
 ## 六、总结
-技术永无止境！利用 `desktop_notifications` 可以在保留了平台特有风格的同时跨越多重操作系统鸿沟，不仅是在鸿蒙，乃至主流操作系统都有用武之地。
-它巧妙地解决了应用切入后台休眠后依然想轻声提示用户的功能渴求。开发者可以在后续通过结合如 WebSocket 甚至是本地闹铃通道结合此 API 做一套纯离线的定时大系统。
-📦 查阅读者开源代码库：[AtomGit 示例专栏](https://atomgit.com)
----
-*版权提供：开源鸿蒙全栖发展小组*
-欢迎加入开源鸿蒙跨平台社区：[开源鸿蒙跨平台开发者社区](https://openharmonycrossplatform.csdn.net)
+
+在具有跨设备、多场景协同的 OpenHarmony 开发语境下，`desktop_notifications` 提供了一直穿透应用边界直达系统的触达手段。开发者不再需要重写各大原生底层的互操作协议，一行指令即可快速召唤原汁原味的系统通知模块，极大提升了研发效率与跨端移植表现。
+
+📦 示例样例开源代码库指引：[AtomGit 示例专栏](https://atomgit.com)
