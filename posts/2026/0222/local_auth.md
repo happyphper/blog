@@ -7,19 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 local_auth — 集成指纹与人脸解锁的安全堡垒（生物核身引擎）
+# Flutter for OpenHarmony：local_auth — 集成指纹与人脸解锁实战
 
 ![local_auth](images/local_auth.png)
 
-
-
 ## 前言
 
-在鸿蒙（OpenHarmony）金、金融或者是含有极端私密属性的应用中，确保“操作者本人”是业务安全的底线。你是否想要让用户在点击“支付”或“查看私密便签”时，极其优雅地唤起鸿蒙系统原生的指纹录入或人脸识别界面？
+在鸿蒙（OpenHarmony）金融或私密类应用中，生物特征核身是安全的基石。`local_auth` 巧妙封装了鸿蒙底层的生物识别接口，允许开发者通过极其简洁的代码调起指纹或人脸验证，为数字资产提供硬件级的防护。
 
-`local_auth` 是官方维护的一套成熟的生物识别抽象。它巧妙地封装了鸿蒙底层的生物核身接口（User Authentication），让开发者能以极其简洁的逻辑，调用世界上最安全的硬件级防护。在构建鸿蒙“数字资产保护”应用时，它是你的安全铁闸。
-
-## 一、原理展示 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 

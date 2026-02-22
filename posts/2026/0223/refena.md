@@ -2,7 +2,8 @@
 
 # Flutter for OpenHarmony：refena — 新一代响应式状态管理框架在鸿蒙的应用
 
-## 前言
+![refena](images/refena.png)
+
 
 状态管理一直是 Flutter 开发中讨论最激烈的话题。从 `Provider` 的简洁、`Bloc` 的严谨到 `Riverpod` 的优雅，每一种方案都在试图解决逻辑复用与状态追踪的问题。而在 **Flutter for OpenHarmony** 生态中，为了追求更极致的性能与代码可读性，**Refena** 作为一个轻量级、功能完备且具有响应式原生属性的框架，正在受到越来越多资深开发者的关注。
 

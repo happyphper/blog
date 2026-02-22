@@ -7,19 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 version 语义化版本解析与比较（版本发布引擎）
+# Flutter for OpenHarmony：version — 语义化版本解析与比较
 
 ![version](images/version.png)
 
-
-
 ## 前言
 
-在鸿蒙（OpenHarmony）应用的生命周期管理中，应用版本升级（OTA）是不可或缺的环节。判定一个服务器下发的版本号（如 `1.2.0-beta.1`）是否高于本地固件版本，并不是简单的字符串比较（因为 `1.10.0` 字符序排在 `1.2.0` 前面）。
+在鸿蒙（OpenHarmony）应用的灰度发布或更新检测逻辑中，精确的版本号比较（如 `1.2.0-beta.1` vs `1.10.0`）是核心。`version` 库遵循 SemVer 规范，提供了完整的版本解析、比较与标签处理能力，是构建可靠更新系统的指挥官。
 
-`version` 库遵循了严谨的 **SemVer (语义化版本)** 规范。它能帮你极其精准地解析主版本、次版本、修订号以及预发布标签。在构建鸿蒙专属的更新检测系统时，它是你的版本发布指挥官。
-
-## 一、原原理性解析 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 

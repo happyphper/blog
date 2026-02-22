@@ -7,15 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 flutter_lints — 守护代码质量的官方严选规范（静态扫描引擎）
+# Flutter for OpenHarmony：flutter_lints — 守护代码质量的官方严选规范
+
+![flutter_lints](images/flutter_lints.png)
 
 ## 前言
 
-在鸿蒙（OpenHarmony）跨平台项目的协作开发中，代码质量的腐化往往是从细节开始的：有人没写 `const` 导致 UI 重复渲染性能下降，有人用了不推荐的私有 API 导致版本升级时崩溃，有人代码风格混乱导致他人难以维护。
+在鸿蒙（OpenHarmony）跨平台协同开发中，代码规范直接影响系统的稳定性与维护成本。`flutter_lints` 包含了一系列官方推荐的最佳实践规则，通过自动化静态扫描规避潜在的性能陷阱与逻辑隐患，是保障项目质量的必备工具。
 
-`flutter_lints` 是一款包含官方推荐（Recommended）规则集的静态分析库。它不仅仅是一堆“警告”，更是由 Google 专家团队背书的开发最佳实践。在鸿蒙这种注重极致性能的系统上，遵循这些 Lints 规则能帮你自动化地规避掉 80% 的性能陷阱和逻辑隐患。
-
-## 一、原理展示 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 
@@ -75,7 +75,6 @@ Widget build(BuildContext context) {
 }
 ```
 
-![flutter_lints](images/flutter_lints.png)
 
 ## 四、OpenHarmony 平台适配挑战
 

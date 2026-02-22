@@ -2,7 +2,8 @@
 
 # Flutter for OpenHarmony：objectbox_generator — 自动化构建鸿蒙极速 NoSQL 数据库映射
 
-## 前言
+![objectbox_generator](images/objectbox_generator.png)
+
 
 在高性能移动应用开发中，本地数据的持久化存储效率往往是决定用户感知流畅度的木桶短板。传统的 SQLite 虽然结构化程度高，但在处理大规模对象关系映射（ORM）时，复杂的 SQL 拼接和反射解析往往会成为性能瓶颈。
 

@@ -7,15 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 date_time_format 极其强大的日期格式化工具（多风格显示）
+# Flutter for OpenHarmony：date_time_format — 极其强大的日期格式化工具
+
+![date_time_format](images/date_time_format.png)
 
 ## 前言
 
-在鸿蒙（OpenHarmony）应用开发中，日期和时间的展示是一个极其高频且细节繁杂的需求。你是想要“2026-02-22”，还是想要“Feb 22nd, 2026”？或者是社交类应用中常见的“今晚 8 点”？
+在鸿蒙（OpenHarmony）应用中，日期时间的展示需求高频且零碎。`date_time_format` 是一款轻量、零依赖的扩展库，通过为 `DateTime` 类添加语义化的格式化占位符，让复杂的时间显示逻辑变得像拼图一样简单高效。
 
-`date_time_format` 是一款轻量级、零依赖的日期格式化扩展库。它通过为 `DateTime` 类添加极其直观的扩展方法，让复杂的日期拼装变得像拼图一样简单。
-
-## 一、原理解析 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 
@@ -80,7 +80,6 @@ void showExerciseHeader() {
 }
 ```
 
-![date_time_format](images/date_time_format.png)
 
 ## 四、OpenHarmony 平台适配挑战
 

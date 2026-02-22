@@ -1,15 +1,14 @@
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：super_string — 打造超强字符串处理引擎
+# Flutter for OpenHarmony：super_string — 打造强力字符串处理引擎
 
+![super_string](images/super_string.png)
 
 ## 前言
 
-在移动应用开发中，字符串处理是最基础也是最频繁的操作之一。无论是处理用户输入、解析后端数据，还是展示本地文本，我们都需要对字符串进行各种变换、校验和格式化。虽然 Dart 原生提供了一些字符串操作方法，但在实际的复杂业务场景下，这些方法往往显得捉襟见肘。
+在鸿蒙（OpenHarmony）业务开发中，原生字符串操作往往难以应对复杂的变换与校验需求。`super_string` 通过扩展方法引入了丰富的判空、格式转换及内容分析工具，能显著提升文本处理效率。
 
-本文将为您介绍一个非常高效、简洁的字符串增强库——`super_string`。更重要的是，我们将探讨如何在 **OpenHarmony** 环境下利用这个库来提升我们的开发效率，并结合鸿蒙系统的特性给出适配建议。
-
-## 一、为什么需要 super_string？
+## 一、核心价值
 
 ### 1.1 原生 Dart 的局限性
 Dart 的 `String` 类虽然支持 `substring`、`contains`、`replace` 等基础操作，但在处理以下场景时代码会变得冗长：

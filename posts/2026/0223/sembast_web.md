@@ -2,8 +2,8 @@
 
 # Flutter for OpenHarmony：sembast_web — 赋能鸿蒙 Web 端的无缝 NoSQL 持久化
 
+![sembast_web](images/sembast_web.png)
 
-## 前言
 
 随着 **OpenHarmony** 生态的蓬勃发展，越来越多的应用需要同时支撑 Native（原生）和 Web（网页）两种运行形态。在鸿蒙跨平台开发中，数据持久化始终是一个核心话题。对于习惯了使用 SQLite 等关系型数据库的开发者来说，NoSQL 数据库以其灵活的模型和极简的 API 正逐渐成为首选。
 

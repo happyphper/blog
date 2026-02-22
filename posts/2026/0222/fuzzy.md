@@ -7,19 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 fuzzy 毫秒级实现模糊搜索（搜索算法引擎）
+# Flutter for OpenHarmony：fuzzy — 端侧毫秒级模糊搜索实战
 
 ![fuzzy](images/fuzzy.png)
 
-
-
 ## 前言
 
-在鸿蒙（OpenHarmony）应用中，搜索框是几乎所有列表页面的核心组件。普通的字符串 `contains` 匹配往往太死板，无法处理错别字、拼音首字母简写或词序颠倒的情况。
+在鸿蒙（OpenHarmony）搜索场景中，死板的字符串匹配往往无法处理错别字或简写等异常输入。`fuzzy` 提供了轻量级的端侧模糊搜索算法支持，无需依赖服务端，即可为联系人查找或商品索引等场景提供极致智能的体验。
 
-`fuzzy` 提供了基于 Fuse.js 方案的轻量级模糊搜索实现。它不需要复杂的外部索引服务器，非常适合在鸿蒙设备端侧直接运行。无论是联系人查找、设置项搜索还是商品导购，`fuzzy` 都能为你的用户提供极其智能的搜索体验。
-
-## 一、原理解析 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 

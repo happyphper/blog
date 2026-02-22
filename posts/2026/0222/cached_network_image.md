@@ -7,15 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨 platform 社区：https://openharmonycrossplatform.csdn.net
 
-# Flutter for OpenHarmony：Flutter 三方库 cached_network_image — 极其强悍的网络图片智能缓存（性能优化引擎）
+# Flutter for OpenHarmony：cached_network_image — 网络图片智能缓存实战
+
+![cached_network_image](images/cached_network_image.png)
 
 ## 前言
 
-在鸿蒙（OpenHarmony）的高性能列表、社交动态页或者是海量图片的画廊应用中，直接使用 `Image.network` 是极不明智的：它会导致图片每次重新加载时都会产生网络开销，且在快速滑动时会由于反复解码造成 UI 卡顿。
+在鸿蒙（OpenHarmony）高频率滑动的页面中，`Image.network` 往往无法提供完美的性能体验。`cached_network_image` 提供了工业级的缓存机制，能显著降低网络开销并消除 UI 渲染抖动，是构建流畅图片体验的基石。
 
-`cached_network_image` 是 Flutter 生态中图片渲染的“黄金标准”。它能自动化地将下载好的图片持久化到鸿蒙系统的沙箱存储中，并在下次请求时瞬间从磁盘读取，同时还提供了极其优雅的占位（Placeholder）和错误处理方案。在鸿蒙应用追求极致流畅度的背景下，它是每一位开发者的必选组件。
-
-## 一、原理展示 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 
@@ -75,7 +75,6 @@ CachedNetworkImage(
 );
 ```
 
-![cached_network_image](images/cached_network_image.png)
 
 ## 四、OpenHarmony 平台适配挑战
 

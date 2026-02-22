@@ -2,7 +2,8 @@
 
 # Flutter for OpenHarmony：redux_epics — 优雅管理鸿蒙状态管理中的异步副作用
 
-## 前言
+![redux_epics](images/redux_epics.png)
+
 
 在构建大型跨平台应用时，状态管理的严谨性直接决定了项目的可维护性。`Redux` 以其单向数据流和不可变状态锁定了许多开发者的心。然而，纯粹的 Redux 加速器（Reducer）必须是同步且无副作用的函数，这给处理异步网络请求、文件读写等副作用带来了挑战。
 

@@ -7,18 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 shelf_multipart 极其稳健的 Multipart 请求处理（文件上传后端增强）
+# Flutter for OpenHarmony：shelf_multipart — 稳健的多段请求处理
 
 ![shelf_multipart](images/shelf_multipart.png)
 
-
 ## 前言
 
-在为鸿蒙（OpenHarmony）终端应用构建配套的 Dart 后端（基于 `shelf`）时，**文件上传**是最常见的需求之一。不论是用户头像上传、大文件的日志提交，还是多表单混合提交，都依赖于 `multipart/form-data` 协议。
+在为鸿蒙（OpenHarmony）应用构建 Dart 后端（基于 `shelf`）时，处理文件上传常涉及 `multipart/form-data` 协议。`shelf_multipart` 提供了高效的流式解析方案，能有效管理内存开销，是在后端实现大文件上传与复杂表单提交的核心组件。
 
-原生的 `shelf` 并不直接解析 multipart 内容。`shelf_multipart` 填补了这一空白。它提供了一种极其高效、基于流（Stream）的解析方式，确保在处理鸿蒙发送过来的大文件时，不会瞬间爆掉后端服务器的内存。
-
-## 一、原理解析 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 

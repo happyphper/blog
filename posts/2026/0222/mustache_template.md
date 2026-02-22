@@ -7,18 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 mustache_template 动态渲染模板（低代码渲染引擎）
+# Flutter for OpenHarmony：mustache_template — 动态模板渲染引擎
 
 ![mustache_template](images/mustache_template.png)
 
-
 ## 前言
 
-在鸿蒙（OpenHarmony）生态开发中，我们难免会遇到“动态内容”的挑战。比如：一套订单通知模板，根据不同的用户、商品、物流信息生成个性化的文案；或者是根据服务端下发的 JSON 数据，动态拼装出一份带样式的简易说明页面。
+在鸿蒙（OpenHarmony）应用中，动态内容渲染（如个性化通知、JSON 转文本等）是常见挑战。`mustache_template` 遵循 Logic-less 原则，专注于变量替换与列表循环，能以高性能、低开销的方式实现模板与数据的分离渲染。
 
-`mustache_template` 是一款遵循 Logic-less（无逻辑）原则的模板引擎。它非常适合那些需要将数据与文本格式分离的场景。本文将展示如何在鸿蒙应用中利用 Mustache 算法，实现极其高效的动态文本与内容渲染。
-
-## 一、原理解析 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 

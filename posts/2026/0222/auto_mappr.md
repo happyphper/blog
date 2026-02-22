@@ -7,18 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 auto_mappr 自动化对象映射神器（架构瘦身引擎）
+# Flutter for OpenHarmony：auto_mappr — 自动化对象映射神器
+
+![auto_mappr](images/auto_mappr.png)
 
 ## 前言
 
-在构建大型鸿蒙（OpenHarmony）商业应用时，我们经常需要处理三种对象模型：
-1. **Entity/Model**：直接对应后端 API 或数据库底层。
-2. **DTO (Data Transfer Object)**：用于数据传输。
-3. **ViewModel/Domain Object**：供鸿蒙 UI 页面直接渲染。
+在大型鸿蒙（OpenHarmony）应用中，手动编写不同层级对象（如 DTO 与 Entity）之间的映射函数既乏味又易错。`auto_mappr` 利用代码生成技术，自动构建高效的映射逻辑，助力架构瘦身。
 
-手动编写这些对象之间的转换函数（如 `toDomain()`）不仅极其乏味，还容易漏掉字段。`auto_mappr` 是一个基于代码生成的映射框架，它能帮你自动化生成这些零碎的转换代码，让你的鸿蒙工程架构瞬间“瘦身”。
-
-## 一、原理解析 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 
@@ -79,7 +76,6 @@ final entity = mapper.convert<UserDto, UserEntity>(userDto);
 class UserMapper extends $UserMapper {}
 ```
 
-![auto_mappr](images/auto_mappr.png)
 
 ## 四、OpenHarmony 平台适配挑战
 

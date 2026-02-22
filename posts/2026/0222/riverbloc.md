@@ -7,18 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 riverbloc — 融合状态 management 双雄（工程化架构引擎）
+# Flutter for OpenHarmony：riverbloc — 融合 Bloc 与 Riverpod 的架构实践
 
 ![riverbloc](images/riverbloc.png)
 
-
 ## 前言
 
-在鸿蒙（OpenHarmony）中大型项目的状态管理选型中，开发者往往面临“艰难的抉择”：是选择极其严谨、适合业务隔离的 **Bloc**？还是选择极其灵活、依赖注入极其丝滑的 **Riverpod**？
+在鸿蒙（OpenHarmony）中大型项目中，开发者常在 Bloc 的严谨性与 Riverpod 的灵活性之间权衡。`riverbloc` 作为桥接库，允许将 Bloc 作为 Provider 管理，兼具了事件溯源与全局依赖注入的优势，是构建可维护业务中枢的理想选择。
 
-`riverbloc` 是一款极具创新的桥接库。它让你能将 Bloc（或 Cubit）作为 Riverpod 的 Provider 进行管理。你既能享受 Bloc 带来的职责分离和事件溯源（Events），又能享受 Riverpod 带来的全局可见性和局部自动刷新能力。在构建鸿蒙高性能、可维护的业务中枢时，它是终极的架构胶水。
-
-## 一、原理展示 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 

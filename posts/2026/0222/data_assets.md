@@ -7,15 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 data_assets 资源映射与生成的工业化实践（资产自动装配）
+# Flutter for OpenHarmony：data_assets — 资源映射与自动装配实践
+
+![data_assets](images/data_assets.png)
 
 ## 前言
 
-在大型鸿蒙（OpenHarmony）工程中，管理 `assets` 资源一直是个令人头疼的问题。你是否还在代码里手动写 `Image.asset('assets/images/home_v2_final_dark.png')`？一旦 UI 修改了文件名或改变了目录结构，这种“硬编码”会导致应用在运行时极其容易崩溃。
+在大型鸿蒙（OpenHarmony）工程中，手动管理静态资源路径极其容易出错。`data_assets` 提供了一套严谨的代码生成方案，能自动扫描资源并将其转换为强类型的 Dart 类，从根本上消灭了资源引用的运行时错误。
 
-`data_assets` 提供了一套极其严谨的、基于代码生成的资源管理方案。它不仅能自动扫描你的鸿蒙工程资源文件夹，还能将这些路径自动转换为强类型的 Dart 类。在追求“零运行时错误”的鸿蒙开发流程中，它是提升资源引用效率的基石。
-
-## 一、原理展示 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 
@@ -78,7 +78,6 @@ class Assets {
 Image.asset(Assets.ohosLogo) // ✅ 极其安全
 ```
 
-![data_assets](images/data_assets.png)
 
 ## 四、OpenHarmony 平台适配挑战
 

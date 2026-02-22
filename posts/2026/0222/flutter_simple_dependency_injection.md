@@ -7,19 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 flutter_simple_dependency_injection 解耦你的应用架构（依赖注入神器）
+# Flutter for OpenHarmony：flutter_simple_dependency_injection — 解耦应用架构的神器
 
 ![flutter_simple_dependency_injection](images/flutter_simple_dependency_injection.png)
 
-
-
 ## 前言
 
-随着鸿蒙（OpenHarmony）工程复杂度的提升，原本简单的代码结构会逐渐变得臃肿：Service 调用 Repository，Repository 调用 ApiClient，所有的构造函数都堆满了各种实例。这种“硬编码”的依赖关系会让单元测试和未来的功能扩展变得极其困难。
+随着鸿蒙工程复杂度的提升，由于“硬编码”依赖导致的架构臃肿会显著增加后期维护成本。`flutter_simple_dependency_injection` 提供了一种轻量级的 DI 方案，通过中立的“注入器”管理组件生命周期，实现各层级代码的深度解耦。
 
-`flutter_simple_dependency_injection` 提供了一种轻量级且强大的 **DI (Dependency Injection, 依赖注入)** 方案。通过将依赖的创建和生命周期管理交给一个中立的“注入器”，我们可以让鸿蒙组件之间实现真正的解耦。
-
-## 一、原理解析 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 

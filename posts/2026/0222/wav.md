@@ -7,19 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 wav 极简操作 WAV 无损音频（音频底层解析）
+# Flutter for OpenHarmony：wav — 无损音频数据解析与操作
 
 ![wav](images/wav.png)
 
-
-
 ## 前言
 
-在鸿蒙（OpenHarmony）音频处理、语音识别预处理或一些特定的音乐节奏类游戏中，我们需要对 WAV 这种原始无损音频格式进行深度解析。你是想要读取音频的每一帧采样值绘制波形图？还是想要根据算法生成一段极其纯净的正弦波音频并保存为文件？
+在鸿蒙（OpenHarmony）音频处理、波形绘制或算法生成场景中，需要对 WAV 格式进行深度解析。`wav` 库是轻量级的纯 Dart 工具，允许开发者以数组形式精准访问采样数据，实现比特级的音频操控。
 
-`wav` 库是一款轻量级、不依赖任何平台 Native 接口的音频解析工具。它能让你在鸿蒙应用中以“数组”的形式访问音频数据，实现极其精准的比特级操控。
-
-## 一、原理解析 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 

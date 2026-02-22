@@ -1,15 +1,14 @@
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：spotify — 跨平台音乐流媒体 API 集成实战
+# Flutter for OpenHarmony：spotify — 跨平台音乐流媒体 API 集成
 
+![spotify](images/spotify.png)
 
 ## 前言
 
-随着鸿蒙系统（OpenHarmony）生态的日益丰富，音频与多媒体应用成为了开发者们关注的热点。而在全球范围内，Spotify 作为流媒体音乐的巨头，其提供的开放 API 为三方应用接入海量音乐库提供了可能。
+在鸿蒙（OpenHarmony）生态中，打造高品质音频应用离不开丰富的资源支持。`spotify` 是 Spotify Web API 的纯 Dart SDK，封装了认证与 RESTful 接口，能让鸿蒙开发者以强类型、异步化的方式高效接入海量专辑与曲目数据。
 
-在 **Flutter for OpenHarmony** 开发中，如何优雅地调用 Spotify API？`spotify` 这个 Dart 三方库正是为此而生。它高度封装了复杂的 OAuth2 认证及 RESTful 接口，让我们能像操作本地对象一样获取专辑、曲目及艺术家信息。今天我们就来实战如何通过这个库开启鸿蒙应用的音乐之门。
-
-## 一、Spotify API 集成的基础
+## 一、核心价值
 
 ### 1.1 什么是 spotify 库？
 它是 Spotify Web API 的 Dart 版 SDK，通过静态类型检查和模型映射，极大地简化了数据的请求与解析。

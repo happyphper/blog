@@ -7,19 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 stack — 轻量级实现 LIFO 栈数据结构（基础算法引擎）
+# Flutter for OpenHarmony：stack — 轻量级 LIFO 栈数据结构
 
 ![stack](images/stack.png)
 
-
-
 ## 前言
 
-在鸿蒙（OpenHarmony）应用的基础逻辑开发中，我们常常需要用到“后进先出（LIFO）”的数据模型。比如：浏览器的历史记录回退、文本编辑器的“撤销/重做”功能、或者是解析极其复杂的嵌套 JSON/表达式。
+在鸿蒙（OpenHarmony）应用的基础逻辑中，后进先出（LIFO）模型常用于浏览器历史回退、撤销重做或表达式解析等场景。`stack` 库提供了一个纯粹、语义明确且具备类型保护的封装，是追求代码可读性时的理想选择。
 
-虽然 Dart 的 `List` 也可以通过 `add` 和 `removeLast` 来模拟栈，但 `stack` 库提供了一个更加纯粹、语义极其明确、且带有类型保护的封装。在追求代码极致可读性的鸿蒙工程中，它是处理状态溯源的最佳选择。
-
-## 一、原理展示 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 

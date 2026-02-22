@@ -1,14 +1,14 @@
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：very_good_test_runner — 打造极致优雅的鸿蒙测试执行体验
+# Flutter for OpenHarmony：very_good_test_runner — 极致极致的测试执行体验
+
+![very_good_test_runner](images/very_good_test_runner.png)
 
 ## 前言
 
-在软件开发中，如果说测试是保障质量的核心，那么一个高效且反馈及时的测试运行器（Test Runner）则是提升开发者幸福感的发动机。Flutter 原生提供了强大的测试能力，但在处理大规模项目和多平台并发运行测试时，控制台的输出往往显得杂乱且难以定位。
+在大规模鸿蒙（OpenHarmony）跨平台项目中，原生的测试输出往往由于信息过载而难以定位问题。`very_good_test_runner` 提供了精简、高可读性的反馈，通过分色排版和汇总看板，显著提升了开发者的闭环调试效率。
 
-在 **Flutter for OpenHarmony** 开发中，我们需要一套更专业、更美观的测试执行方案。`very_good_test_runner` 作为一个由 VGV 团队打造的高效执行器，能为我们提供精简、高可读性的控制台反馈。今天我们就来看看，如何在鸿蒙项目的质量守卫战中，利用这套工具做到“快、准、美”。
-
-## 一、为什么需要更高级的 Test Runner？
+## 一、核心价值
 
 ### 1.1 原生测试输出的痛点
 原生的 `flutter test` 在运行数十个文件时，输出的信息流会迅速淹没整个屏幕，当其中一个测试失败时，我们往往需要费力地向上翻找错误栈。

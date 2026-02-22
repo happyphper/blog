@@ -7,15 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 es_compression — Brotli 与前沿算法直接落地（高压算法引擎）
+# Flutter for OpenHarmony：es_compression — 高性能 Brotli 与 Zstd 算法实战
+
+![es_compression](images/es_compression.png)
 
 ## 前言
 
-在鸿蒙（OpenHarmony）某些重度包含数据包下发的应用开发（如游戏资源更新包解包、AI 离线模型数据同步包，乃至各种复杂极其大体积包含上千条配置记录的 JSON 数据表结构文件落盘）中，压缩率直接代表着终端用户流失前必须忍耐的“加载时长与空间”。如果你还局限于极其基础陈旧的 GZIP 解析。
+在重度数据交互的鸿蒙（OpenHarmony）应用中，高压缩率直接关系到加载速度与存储成本。`es_compression` 将前沿的 Brotli 与 Zstandard 算法引入客户端，能在保障性能的同时大幅降低网络流量，是对抗高带宽支出的利器。
 
-`es_compression` 提供了一个包含目前顶级互联网公司标配——Brotli 和 Zstandard(zstd) 等顶级压制方案的纯 Dart 支持体系（通过精巧极核的算法在隔离环境处理）。它能在极大程度利用客户端端侧 CPU 来快速降低下行网络承载压力。在构建对网络有着极致抠抠搜搜索求的极客鸿蒙应用时，它是你对抗大带宽支出的核能。
-
-## 一、原理展示 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 
@@ -80,7 +80,6 @@ final BrotliCodec codec = BrotliCodec();
 var unzipped = codec.decoder.convert(response.data);
 ```
 
-![es_compression](images/es_compression.png)
 
 ## 四、OpenHarmony 平台适配挑战
 

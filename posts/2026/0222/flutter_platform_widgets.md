@@ -7,19 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 flutter_platform_widgets 让 UI 一套代码多终端原生体验（适配转换引擎）
+# Flutter for OpenHarmony：flutter_platform_widgets — 一套代码，多端原生体验
 
 ![flutter_platform_widgets](images/flutter_platform_widgets.png)
 
-
-
 ## 前言
 
-在打造鸿蒙（OpenHarmony）跨平台应用时，开发者常面临一个视觉痛点：如果直接使用 Material Design，在鸿蒙系统上可能会显得有些“外来感”；而如果全部手写两套 UI（Material 对应 Android/鸿蒙，Cupertino 对应 iOS），代码维护量将翻倍。
+在打造鸿蒙（OpenHarmony）跨平台应用时，既要保证开发效率，又要保持系统原生感。`flutter_platform_widgets` 提供了智能抽象组件，能根据运行环境自动切换 Material 与 Cupertino 风格，是实现视觉适配的核心引擎。
 
-`flutter_platform_widgets` 完美解决了这一矛盾。它提供了一套极其智能的抽象组件（如 `PlatformWidget`, `PlatformButton`），能根据当前运行的鸿蒙物理环境或平台设置，自动在 Material 和 Cupertino 风格之间无缝切换。在鸿蒙应用追求“既要跨平台，又要原生感”的今天，它是你的视觉翻译官。
-
-## 一、原理展示 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 

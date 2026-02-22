@@ -1,14 +1,14 @@
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：turf — 开启鸿蒙端的地理空间分析与地理围栏能力
+# Flutter for OpenHarmony：turf — 开启高级地理空间分析能力
+
+![turf](images/turf.png)
 
 ## 前言
 
-随着鸿蒙（OpenHarmony）系统在智慧出行、健康监测及物流配送等领域的全面推进，对地理空间（Geospatial）数据的处理需求日益旺盛。如何判断用户是否进入了特定的商业区（点在多边形内）？如何计算长距离配送中两点间的最短大圆路径？如何对复杂的轨迹点进行平滑简化？
+随着鸿蒙（OpenHarmony）系统在出行与物流领域的推进，本地化地理空间数据处理变得至关重要。`turf` 库提供了一套完整的地理空间算子，支持在终端侧完成点在面内判断、大圆路径计算及轨迹简化等功能，无需依赖后端数据库。
 
-在 **Flutter for OpenHarmony** 开发中，`turf` 库提供了一套极其完整的、遵循国际标准（GeoJSON）的地理空间算子。今天，我们将实战如何利用 `turf` 库在鸿蒙平台上实现专业级的地图空间分析。
-
-## 一、为什么集成 turf 库？
+## 一、核心价值
 
 ### 1.1 让地理计算脱离后端依赖
 许多复杂的空间运算以往需要依赖后端数据库（如 PostGIS）。通过 `turf`，这些计算可以在鸿蒙终端本地完成，极大提升了应用的响应速度和离线工作能力。

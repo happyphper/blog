@@ -7,18 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 share_plus — 一键系统级内容共享（社交分发引擎）
+# Flutter for OpenHarmony：share_plus — 触发系统级内容分享
 
 ![share_plus](images/share_plus.png)
 
-
 ## 前言
 
-在鸿蒙（OpenHarmony）应用的信息交互循环中，让用户将精彩的内容刷到朋友圈、发送给通讯录好友或是通过蓝牙/碰一碰共享，是提升应用活跃度的利器。手动对接各个社交平台的 SDK 极其痛苦，且不符合鸿蒙“去中心化”的共享理念。
+在鸿蒙（OpenHarmony）应用中，内容分享是社交互动的重要环节。`share_plus` 提供了接入鸿蒙原生分享面板（Share Sheet）的便捷方案，支持文字、链接及多图分享，助力构建跨平台的社交分发能力。
 
-`share_plus` 是官方 Plus 系列的核心成员。它能极其优雅地拉起鸿蒙系统的原生分享面框（Share Sheet）。你可以分享纯文字、网页链接或是多张高清大图。在构建鸿蒙“全场景内容流转”时，它是你的社交扩音器。
-
-## 一、原理展示 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 

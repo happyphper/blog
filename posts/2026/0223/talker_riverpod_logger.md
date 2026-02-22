@@ -1,15 +1,14 @@
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：talker_riverpod_logger — 构建透明且可追溯的状态监控体系
+# Flutter for OpenHarmony：talker_riverpod_logger — 透明的状态监控体系
 
+![talker_riverpod_logger](images/talker_riverpod_logger.png)
 
 ## 前言
 
-在 Flutter 开发中，**Riverpod** 已成为状态管理的事实标准之一。然而，随着应用规模的增长，Providers 之间的依赖关系和状态变更会变得错综复杂。当某个状态异常跳变或未按预期更新时，仅仅依靠断点调试不仅效率低下，且难以还原完整的“故障现场”。
+随着鸿蒙（OpenHarmony）应用状态依赖的增加，追踪状态变化会变得愈发困难。`talker_riverpod_logger` 结合 `talker` 日志框架，能实时监控并结构化输出 Riverpod 的所有变更，极大简化了复杂业务逻辑下的调试流程。
 
-在 **OpenHarmony** 跨平台实战中，我们需要一套更专业、更具可视化的日志监控方案。`talker_riverpod_logger` 结合了强大的日志框架 `talker`，能够实时捕捉并美化 Riverpod 的所有状态变更。今天我们就来实战如何打造一套透明的鸿蒙应用状态监控体系。
-
-## 一、为什么需要专门的状态日志？
+## 一、核心价值
 
 ### 1.1 状态管理的“黑盒”问题
 在复杂的业务逻辑中，一个 `Provider` 的改变可能引发数个衍生 `Provider` 的级联反应。手动在每个 `Provider` 里写 `print` 既不雅观又难以维护。

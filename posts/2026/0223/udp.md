@@ -1,14 +1,14 @@
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：udp — 实现鸿蒙设备间的超低延迟底层通信
+# Flutter for OpenHarmony：udp — 实现极速底层异步通信
+
+![udp](images/udp.png)
 
 ## 前言
 
-在物联互通、多人实时对战以及视频推流等高性能场景中，传统的 TCP 由于其握手开销和重传机制带来的延迟，往往无法满足极致的实时性要求。相比之下，**UDP (User Datagram Protocol)** 作为一种无连接的传输协议，以其轻量级、无状态和高吞吐的特点，成为了鸿蒙（OpenHarmony）底层通信的首选。
+在实时对战与 IoT 场景下，UDP 由于无握手开销且支持广播，是实现低延迟通讯的首选。`udp` 库为鸿蒙（OpenHarmony）开发者提供了面向对象的纯 Dart 通讯方案，支持亚毫秒级的实时数据投递，是分布式设备发现的利器。
 
-在 **Flutter for OpenHarmony** 开发中，我们如何构建一套高效的 UDP 数据链路？`udp` 库为我们提供了一个面向对象的、纯 Dart 实现的 UDP 通讯方案。今天，我们将探索如何在鸿蒙平台上实现亚毫秒级的实时数据快传。
-
-## 一、为什么在鸿蒙上需要 UDP？
+## 一、核心价值
 
 ### 1.1 万物互联的“实时脉搏”
 鸿蒙分布式架构中包含大量的小型 IoT 传感器。对于这些设备而言，一次心跳包或者一段状态广播，并不需要 TCP 复杂的确认逻辑，UDP 的快速投递能力正合其意。

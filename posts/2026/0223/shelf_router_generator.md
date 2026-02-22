@@ -2,7 +2,8 @@
 
 # Flutter for OpenHarmony：shelf_router_generator — 高效构建鸿蒙本地 Web 服务路由
 
-## 前言
+![shelf_router_generator](images/shelf_router_generator.png)
+
 
 在现代跨平台应用中，服务端渲染或本地 HTTP 服务正变得越来越重要。无论是为了在鸿蒙端实现高性能的资源分发，还是为了在局域网内进行设备间的轻量级调速，构建一个稳定且易维护的 Web 路由体系是核心支撑。
 

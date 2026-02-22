@@ -7,19 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 media_kit 极致视听的全能播放器内核（音视频旗舰引擎）
+# Flutter for OpenHarmony：media_kit — 全能多媒体播放器内核
 
 ![media_kit](images/media_kit.png)
 
-
-
 ## 前言
 
-在鸿蒙（OpenHarmony）应用中，音视频播放是最常见也最“吃性能”的功能。如果你的应用需要极其强大的解码能力（比如秒开 4K 蓝光、支持 RTMP/UDP 流、甚至是支持外挂字幕和倍速播放），系统原生的播放器组件往往显得力不从心。
+在鸿蒙（OpenHarmony）应用中实现极致的音视频播放体验，`media_kit` 是理想的旗舰级引擎。基于强大的 libmpv 核心，它提供了硬件加速、全格式支持以及灵活的渲染接口，能为鸿蒙设备带来专业级的视听能力。
 
-`media_kit` 是一款顶级的跨平台多媒体框架，它基于强大的 **libmpv** 核心搭建，提供了行业领先的硬件加速、极致的格式支持和极其灵活的渲染接口。在鸿蒙设备上接入 `media_kit`，意味着你的应用将拥有一颗专业级“播放器心脏”。
-
-## 一、原理解析 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 

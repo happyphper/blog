@@ -7,18 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 slugid 紧凑型极短唯一 ID 生成器（极简标识引擎）
+# Flutter for OpenHarmony：slugid — 紧凑型极短唯一 ID 生成实战
 
 ![slugid](images/slugid.png)
 
-
 ## 前言
 
-在鸿蒙（OpenHarmony）应用开发中，唯一标识符（ID）无处不在：日志 Trace ID、分布式文件系统中的临时节点名、或者是用户分享内容的短链接。标准的 UUID（如 `550e8400-e29b-41d4-a716-446655440000`）虽然极其稳定，但它太长了，在移动端屏幕展示或存储时显得十分累赘。
+在鸿蒙（OpenHarmony）应用中，标识符（ID）广泛用于日志追踪、文件命名或短链接。相比 36 字符的长 UUID，`slugid` 能将 ID 压缩为 22 字符且 URL 安全的字符串，更符合移动端界面展示与存储的极简需求。
 
-`slugid` 提供了一种精妙的方案：它将 128 位的 UUID 压缩成了一种更短、URL 安全的 Base64 字符串（仅 22 个字符）。在鸿蒙应用追求极致交互与极简审美的今天，`slugid` 是你优雅解决 ID 展示的最佳拍档。
-
-## 一、原理解析 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 

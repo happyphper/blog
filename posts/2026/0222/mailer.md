@@ -7,19 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 mailer — 原生邮件极速投递（通信发送引擎）
+# Flutter for OpenHarmony：mailer — 基于 SMTP 的极速邮件投递服务
 
 ![mailer](images/mailer.png)
 
-
-
 ## 前言
 
-在鸿蒙（OpenHarmony）办公 OA 或者含有极速客服反馈（例如报错一键提交）业务逻辑的应用中，让用户直接调用系统邮件客户端可能会打断他们的业务工作流。你是否想过在应用内部“悄无声息”地向公司的客户邮箱发送一封包含业务日志甚至报错截图的极其专业的 HTML 邮件？
+在鸿蒙（OpenHarmony）办公 OA 应用中，实现应用内的邮件发送能显著提升业务流效率。`mailer` 是一款成熟的 SMTP 协议工具，允许鸿蒙应用跳过系统邮件客户端，直接与主流邮件服务器通信，实现纯粹的点对点投递。
 
-`mailer` 是一款在 Dart 生态中极其长寿且功能丰满的 SMTP 协议发信工具。通过这个库，鸿蒙应用可以跳过系统级的邮件呼叫，直接以底层连接的形式和腾讯、企业微信或是 Gmail 沟通，完成极其纯粹的点对点投递。在构建鸿蒙“企业内部闭环管理软件”时，它是你的在线物流中心。
-
-## 一、原理展示 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 

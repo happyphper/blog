@@ -7,15 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 dart_frog_cli 极简极速的服务端渲染（轻服务后端引擎）
+# Flutter for OpenHarmony：dart_frog_cli — 极简极速的轻量后端引擎
+
+![dart_frog_cli](images/dart_frog_cli.png)
 
 ## 前言
 
-在鸿蒙（OpenHarmony）生态的开发中，我们不仅仅关注客户端的 UI 交互，往往还需要一个能极其快速响应、与 Flutter 数据模型无缝对接的“轻后端”。传统的 Java 或 Go 后端虽然强大，但维护两套语言模型是一套沉重的负担。
+在鸿蒙（OpenHarmony）应用开发中，除了 UI 交互，往往需要一个能快速响应且与 Flutter 数据模型无缝对接的“轻后端”。`dart_frog_cli` 允许开发者利用 Dart 语言在几秒内搭建出 RESTful API 或 WebSocket 服务，实现真正的全栈开发体验。
 
-`dart_frog` 是一款由 Very Good Ventures 推出的极简 Dart 后端框架。而 `dart_frog_cli` 则是它的核心指挥部，通过极简的命令行操作，你可以在几秒钟内搭建出一个适配鸿蒙应用的 RESTful API 或 WebSocket 服务，实现“全栈 Java-less”的鸿蒙开发体验。
-
-## 一、原理解析 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 
@@ -80,7 +80,6 @@ Response onRequest(RequestContext context, String id) {
 }
 ```
 
-![dart_frog_cli](images/dart_frog_cli.png)
 
 ## 四、OpenHarmony 平台适配挑战
 

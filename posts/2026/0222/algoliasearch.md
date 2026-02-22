@@ -7,15 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 algoliasearch 毫秒级云端搜索体验（云原生搜索引擎）
+# Flutter for OpenHarmony：algoliasearch — 毫秒级云端搜索集成实战
+
+![algoliasearch](images/algoliasearch.png)
 
 ## 前言
 
-在鸿蒙（OpenHarmony）大生态下，许多应用需要处理百万甚至千万量级的数据搜索。单纯依靠本地的 `fuzzy` 匹配在海量数据面前会显得吃力，且难以实现分词纠错、热度排行等高级特性。
+在处理海量数据的鸿蒙应用中，传统的本地搜索往往难以兼顾速度与纠错能力。`algoliasearch` 提供了工业级的云原生搜索支持，能在毫秒级内返回精准结果，是构建高性能查询体验的核心引擎。
 
-`algoliasearch` 是全球顶级的云原生搜索服务 Algolia 的官方 Dart SDK。它为鸿蒙应用提供了极其强悍、具备工业级稳定性的搜索能力。通过它，你只需要输入几个字符，云端便能在 20ms 内通过全球加速节点将最相关的结果推送到用户的鸿蒙设备上。
-
-## 一、原理解析 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 
@@ -87,7 +87,6 @@ void onHarmonyTyping(String text) async {
 }
 ```
 
-![algoliasearch](images/algoliasearch.png)
 
 ## 四、OpenHarmony 平台适配挑战
 

@@ -2,7 +2,8 @@
 
 # Flutter for OpenHarmony：scidart — 释放鸿蒙设备的科学计算与信号处理潜力
 
-## 前言
+![scidart](images/scidart.png)
+
 
 随着移动芯片性能的飞速迭代，鸿蒙设备（OpenHarmony）不再仅仅是收发信息的通讯工具，更是强大的移动计算终端。在医疗监测、音频分析、传感器数据挖掘等专业领域，开发者往往需要在移动端进行实时且复杂的数学运算。
 

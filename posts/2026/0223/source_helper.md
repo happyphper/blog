@@ -2,7 +2,8 @@
 
 # Flutter for OpenHarmony：source_helper — 自动化代码生成的得力助手
 
-## 前言
+![source_helper](images/source_helper.png)
+
 
 在进行 **Flutter for OpenHarmony** 开发时，随着项目复杂度的增加，我们经常需要编写大量的“样板代码”（Boilerplate Code）。比如，为每一个类编写 `toJson` 和 `fromJson`，或者由于类名太长而需要频繁地进行字符串映射。
 

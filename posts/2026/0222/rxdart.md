@@ -7,19 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 rxdart 极致掌控响应式数据流（异步编程引擎）
+# Flutter for OpenHarmony：rxdart — 响应式数据流编程实践
 
 ![rxdart](images/rxdart.png)
 
-
-
 ## 前言
 
-在鸿蒙（OpenHarmony）复杂的业务场景中——比如：实时变化的股票行情、多个传感器聚合的运动数据、或者是需要极其灵敏的防抖搜索——单纯使用 Dart 原生的 `Stream` 可能显得捉襟见肘。
+在鸿蒙（OpenHarmony）复杂的业务场景中，处理高频变化的传感器数据或防抖搜索逻辑时，原生 Stream 往往显得单薄。`rxdart` 基于 ReactiveX 标准提供了丰富的操作符与增强型 Subject，为复杂的异步数据流转提供了清晰、可组合的编程范式。
 
-`rxdart` 是一款基于 ReactiveX 标准的响应式扩展库。它为鸿蒙开发者提供了极其丰富的操作符（Operators）和更强大的 `Subject`，让原本逻辑如乱麻般的异步代码流，瞬间变得像自来水管般清晰有序。
-
-## 一、原理解析 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 

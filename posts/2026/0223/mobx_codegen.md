@@ -2,7 +2,8 @@
 
 # Flutter for OpenHarmony：mobx_codegen — 自动化驱动的高性能响应式状态管理
 
-## 前言
+![mobx_codegen](images/mobx_codegen.png)
+
 
 在 Flutter 状态管理的璀璨星空中，**MobX** 以其“透明的函数式响应式编程”（TFRP）特性脱颖而出。它让开发者能以声明式的方式描述状态，而让框架自动处理状态变更到 UI 刷新的全过程。
 

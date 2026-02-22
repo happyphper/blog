@@ -7,18 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 sentry_logging — 全景崩溃诊断与监控（异常追踪引擎）
+# Flutter for OpenHarmony：sentry_logging — 异常上报与生产环境监控
 
 ![sentry_logging](images/sentry_logging.png)
 
-
 ## 前言
 
-在鸿蒙（OpenHarmony）商业级应用上线之后，最令开发者心力交瘁的莫过于这句反馈：“软件又闪退了”，而你手头却仅有几句干瘪的用户描述。无论是网络接口抛出的神秘错误，还是鸿蒙底层系统方法调用引发的崩溃。
+在鸿蒙（OpenHarmony）应用上线后，实时监控崩溃与异常是保障稳定性的关键。`sentry_logging` 是一个企业级的异常追踪桥接器，它将 Dart 传统的 `logging` 框架与 Sentry 服务相结合，能够自动捕获并上报包含用户上下文、堆栈信息及设备状态的日志，是排查线上问题的得力工具。
 
-`sentry_logging` 是一款企业级的异常上报抽象桥接器。它将 Dart 原生的 `logging` 框架与强大的第三方崩溃监控服务 Sentry 有机结合。这意味着开发者在代码里的每一句通过 `log.warning` 或者 `log.severe` 记录的警告，都能被自动附带全套的用户上下文信息，打包抛送至远端大屏。在构建具有抗压韧性的鸿蒙应用时，它是你的在线抢救仪。
-
-## 一、原理展示 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 

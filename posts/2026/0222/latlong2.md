@@ -7,19 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 latlong2 专业地图坐标系转换（地理信息计算）
+# Flutter for OpenHarmony：latlong2 — 地图坐标计算与转换实战
 
 ![latlong2](images/latlong2.png)
 
-
-
 ## 前言
 
-在鸿蒙（OpenHarmony）高德、腾讯或百度地图的开发实践中，地理坐标（经纬度）的处理是基础。无论是计算两个地点之间的直线距离、计算路段的方向角，还是对一系列路径点进行平滑过滤，都离不开严谨的数学算法。
+在鸿蒙（OpenHarmony）地图开发中，地理坐标（经纬度）的严谨处理是业务基石。`latlong2` 是一个纯 Dart 实现的地理座标计算库，支持大圆距离、方位角及中点计算，为基于位置的服务（LBS）提供了高性能的数学支撑。
 
-`latlong2` 是一个纯 Dart 实现的地理座标计算库。它不依赖于任何原生平台 SDK，这意味着它在鸿蒙设备端侧的运行是极其稳定且高性能的。本文将带大家领略如何在鸿蒙应用中优雅地计算地球表面的点线关系。
-
-## 一、原理解析 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 

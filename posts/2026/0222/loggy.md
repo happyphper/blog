@@ -7,19 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 loggy 极其优雅的日志分级管理（专业日志引擎）
+# Flutter for OpenHarmony：loggy — 优雅的日志分级管理实践
 
 ![loggy](images/loggy.png)
 
-
-
 ## 前言
 
-在鸿蒙（OpenHarmony）大工程中，杂乱无章的 `print` 语句是开发者的噩梦。当你试图在成千上万行调试信息中定位一个特定的 API 异常时，你会发现单纯的文本输出缺乏分级、标签和色彩识别。
+在鸿蒙（OpenHarmony）大型工程中，杂乱的调试信息往往会降低开发效率。`loggy` 是一款轻量且可扩展的分级日志库，允许开发者根据业务逻辑（如网络、数据库等）对日志进行标签化处理，并能根据运行环境自动切换输出策略，是专业调试的得力助手。
 
-`loggy` 是一款及其轻量且可扩展的专业日志库。它允许你根据业务逻辑（如：网络、数据库、UI 交互）对日志进行分级标签化处理，并能根据鸿蒙系统的运行环境自动切换输出策略。
-
-## 一、原理解析 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 

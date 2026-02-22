@@ -2,7 +2,8 @@
 
 # Flutter for OpenHarmony：remove_emoji — 提升鸿蒙应用输入与展示的洁净度
 
-## 前言
+![remove_emoji](images/remove_emoji.png)
+
 
 在进行 **Flutter for OpenHarmony** 开发时，我们经常需要处理用户输入的数据。虽然 Emoji 表情符号为社交应用增添了趣味，但在某些特定场景下，比如后台管理系统的用户名保存、银行系统的转账备注、或者是需要进行强制文本格式分析的场合，Emoji 的存在可能会导致乱码、存储报错甚至业务逻辑漏洞。
 

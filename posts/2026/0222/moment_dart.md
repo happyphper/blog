@@ -7,19 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 moment_dart 复刻 Moment.js 体验的极简时间处理（日期操作专家）
+# Flutter for OpenHarmony：moment_dart — 复刻级极简时间处理经验
 
 ![moment_dart](images/moment_dart.png)
 
-
-
 ## 前言
 
-如果你以前是 Web 前端开发者，那你一定非常怀念 `Moment.js` 或是 `Day.js` 那种丝滑的链式调用体验。在鸿蒙（OpenHarmony）应用开发中，原生的 `DateTime` 库虽然稳健，但在处理“上个周一”、“三个月后的今天”或者是“显示人性化的相对时间”时，代码会变得极其冗长。
+怀念 Moment.js 丝滑的链式调用？`moment_dart` 将其体验完美复刻至鸿蒙（OpenHarmony）开发。它不仅增强了原生 DateTime 的操作能力，更针对人性化的相对时间展示和复杂的日期偏移提供了极简的一行式方案。
 
-`moment_dart` 是专门为解决这一痛点而生的库。它复刻了 Moment.js 的大部分 API 设计。在鸿蒙设备上，它能让你用极简的一行代码，完成极其复杂的日期偏移动作。
-
-## 一、原理解析 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 

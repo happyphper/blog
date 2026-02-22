@@ -7,15 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 basic_utils 全能工具包集（进阶工具工厂）
+# Flutter for OpenHarmony：basic_utils — 全能进阶工具箱实战
+
+![basic_utils](images/basic_utils.png)
 
 ## 前言
 
-在鸿蒙（OpenHarmony）开发的进阶阶段，我们需要的工具不再仅仅是“时间格式化”或者“正则校验”那么简单。你是否需要极其快速地生成一段随机密码？是否需要对字符串进行复杂的 `CamelCase` 或 `PascalCase` 转换？或者需要一个更强大的网络地址（IP/子网）解析器？
+在鸿蒙应用的核心逻辑开发中，不仅需要基础校验，更需要高效的密码生成、字符串模式转换及网络 IP 解析。`basic_utils` 采用工厂模式，涵盖了大量重型逻辑工具，是架构师手中不可或缺的锦囊。
 
-`basic_utils` 是一款包含了大量“重型”逻辑工具的库。它由一系列专门的工厂类（如 `StringUtils`, `HttpUtils`, `CryptoUtils`）组成，旨在补充 Dart 基础库和普通工具库功能的不足，是鸿蒙架构师手中的必备锦囊。
-
-## 一、原理解析 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 
@@ -76,7 +76,6 @@ String formatConfigKey(String rawInput) {
 }
 ```
 
-![basic_utils](images/basic_utils.png)
 
 ## 四、OpenHarmony 平台适配挑战
 

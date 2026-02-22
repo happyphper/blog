@@ -7,15 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 base32 高性能处理 Base32 编解码（数据转换专家）
+# Flutter for OpenHarmony：base32 — 高性能 Base32 编解码实战
+
+![base32](images/base32.png)
 
 ## 前言
 
-在鸿蒙（OpenHarmony）的各种安全校验、OTP (一次性密码) 生成以及特定的网络协议中，`Base32` 编码比传统的 Base64 更具优势：它只包含不区分大小写的英文字母和数字，极其适合在鸿蒙应用中作为短码展示或 QR 码生成。
+在鸿蒙的安全校验与 OTP 生成场景中，`Base32` 编码以其不区分大小写且无特殊符号的特性，非常适合作为短码展示。`base32` 库提供了符合 RFC 4648 标准的高效实现，是处理安全数据的利器。
 
-`base32` 库提供了一个纯粹、高效且符合 RFC 4648 标准的编解码实现。在进行鸿蒙设备间的密钥交换或校验码处理时，它是你最可靠的数据转换专家。
-
-## 一、原理解析 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 
@@ -84,7 +84,6 @@ void processAuthSecret(String userSecret) {
 }
 ```
 
-![base32](images/base32.png)
 
 ## 四、OpenHarmony 平台适配挑战
 

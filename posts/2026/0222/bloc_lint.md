@@ -7,15 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 bloc_lint — 静态层给架构建立强硬代码纪律法规（架构治理引擎）
+# Flutter for OpenHarmony：bloc_lint — 构建状态管理的硬性规范
+
+![bloc_lint](images/bloc_lint.png)
 
 ## 前言
 
-在鸿蒙（OpenHarmony）商业应用构建体系中，BLoC (Business Logic Component) 作为极其受欢迎且久经沙场验证的主流状态管理选项之一，其能够很好的区隔 UI 层与深层次复杂多变业务层。但即便其设计优秀且完善，部分因为初学者对“事件源如何定义”、“状态应当如何闭环抛出和重建”理解错位而在团队项目中引发了诸如事件滥用乱扔的状态泄漏等大型坑底。
+在大型鸿蒙（OpenHarmony）应用中，BLoC 架构虽优秀，但若开发者写法散漫，易造成状态泄漏等问题。`bloc_lint` 提供了专门的代码扫描规则，强制团队遵循规范，是从静态分析层面保障架构健壮性的卫士。
 
-`bloc_lint` 作为一套完全专门为 `flutter_bloc` 体系打造的规则分析插件，在底层完全接入你最信任的老大哥 IDE 和 CLI 验证中心。它通过对你的源码状态类代码进行扫描，从而逼你建立符合该架构设计真正思想哲学初衷的写法。在想要于庞大极其需要高度共识的企业级鸿蒙项目中推动 BLoC 范式时，它是你的架构卫士。
-
-## 一、原理展示 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 
@@ -66,7 +66,6 @@ void tryToUpdateStateBypassSystem(BuildContext context) {
 }
 ```
 
-![bloc_lint](images/bloc_lint.png)
 
 ## 四、OpenHarmony 平台适配挑战
 

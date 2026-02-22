@@ -7,19 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 sembast_web — 轻量可靠的离线微型数据库（缓存引擎）
+# Flutter for OpenHarmony：sembast_web — 轻量级 NoSQL 数据库实战
 
 ![sembast_web](images/sembast_web.png)
 
-
-
 ## 前言
 
-在鸿蒙（OpenHarmony）某些不需要复杂关联表的开发场景中（例如：用户偏好设置、购物车缓存、深层 JSON 暂存），使用体积庞大的 SQLite 显得大材小用，而普通的 `shared_preferences` 则无法支持花样繁多的查询。
+在鸿蒙（OpenHarmony）应用中，处理用户偏好、购物车缓存等简单持久化需求时，使用 SQLite 可能过重。`sembast_web` 属于纯 Dart 实现的 NoSQL 方案，支持深层嵌套数据存储与原子事务，是实现轻量级离线存储的理想选择。
 
-`sembast_web` 及所属 `sembast` (Simple Embedded NoSQL database for Dart) 家族是纯 Dart 编写的高性能单文件 NoSQL 数据库存取方案。它没有繁琐的关系架构，却像 MongoDB 一样极度自由，非常适合进行各种任意深层嵌套数据结构的状态快照的闪电存储。
-
-## 一、原理展示 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 

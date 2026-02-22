@@ -7,19 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 gql_dio_link — 无缝衔接 Dio 与 GraphQL（网络联调引擎）
+# Flutter for OpenHarmony：gql_dio_link — Dio 与 GraphQL 的无缝桥梁
 
 ![gql_dio_link](images/gql_dio_link.png)
 
-
-
 ## 前言
 
-在鸿蒙（OpenHarmony）大前端开发中，`Dio` 是公认的、极其强大的 HTTP 客户端。而当你的后端采用了现代化的 `GraphQL` 定制化查询协议时，如何在保留 Dio 极其丰富的拦截器（Interceptors）和请求配置能力的同时，又能优雅地发起 GraphQL 请求？
+在鸿蒙（OpenHarmony）开发中，Dio 是公认的网络利器。当后端采用 GraphQL 协议时，`gql_dio_link` 充当了完美的转换层，允许开发者在保留 Dio 强大拦截器与配置能力的同时，优雅地发起 GraphQL 请求，提升网络联调效率。
 
-`gql_dio_link` 正是连接这两个世界的“桥梁”。它作为 `Link` 层，将 GraphQL 的标准化操作转发给 Dio 执行。在鸿蒙项目的网络架构中，它是实现复杂 API 聚合与高效查询的润滑剂。
-
-## 一、原理展示 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 

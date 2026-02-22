@@ -7,19 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 hive_flutter — 超高性能本地 NoSQL 存储（轻量数据库引擎）
+# Flutter for OpenHarmony：hive_flutter — 极致性能的纯 Dart 本地数据库
 
 ![hive_flutter](images/hive_flutter.png)
 
-
-
 ## 前言
 
-在鸿蒙（OpenHarmony）大前端开发中，如何极其高效地存储用户的偏好设置、离线缓存或是复杂的业务对象？传统的 SQLite 虽然强大但太过繁重，而 SharedPreferences/MMKV 虽然快但不支持复杂对象的层级存储。
+在鸿蒙（OpenHarmony）应用中实现高效的本地持久化，Hive 是兼具性能与便捷性的首选。它作为纯 Dart 实现的 NoSQL 数据库，不依赖 Native C++ 库，能完美适配鸿蒙沙箱环境，为用户提供毫秒级的数据读取体验。
 
-`Hive` 是一款纯 Dart 编写、具备极致性能的键值对（Key-Value）数据库。它不依赖于任何 Native C++ 库，这意味着它能极其完美地在鸿蒙沙箱内运行。根据官方测评，它的读写性能远超 SQLite。在鸿蒙应用追求“毫秒级数据回显”的今天，`Hive` 是你的不二之选。
-
-## 一、原理展示 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 

@@ -7,15 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 daylight — 鸿蒙设备精准日出日落计算（时间计算引擎）
+# Flutter for OpenHarmony：daylight — 鸿蒙设备精准日出日落计算
+
+![daylight](images/daylight.png)
 
 ## 前言
 
-在鸿蒙（OpenHarmony）天气预报、户外运动规划、或者是需要在傍晚自动切换应用为“深色模式（Dark Mode）”的智能应用中，精准获取当前用户所在经纬度的日出、日落甚至是黄昏时间是核心需求。
+在鸿蒙（OpenHarmony）的天气、摄影或智能主题类应用中，根据经纬度计算精准的日出日落时间是核心需求。`daylight` 库基于专业天文算法，支持纯本地计算相关天体相位，是构建地理感知能力的理想选择。
 
-`daylight` 是一个轻量级且极具天文学专业度的纯 Dart 库。它基于著名的 SunCalc 算法，无需依赖任何网络接口即可在本地端侧极其精密地推算出太阳位置的各项生命周期。在构建具有地理感知能力的鸿蒙应用时，它是你的太阳系向导。
-
-## 一、原理展示 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 
@@ -78,7 +78,6 @@ if (DateTime.now().isAfter(twilightEnds!)) {
 }
 ```
 
-![daylight](images/daylight.png)
 
 ## 四、OpenHarmony 平台适配挑战
 

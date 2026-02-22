@@ -7,19 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 process — 极其强大的外部进程操作（系统命令引擎）
+# Flutter for OpenHarmony：process — 稳健的系统外部进程操作
 
 ![process](images/process.png)
 
-
-
 ## 前言
 
-在鸿蒙（OpenHarmony）桌面级应用、自动化脚本或者是需要与鸿蒙底层 Shell 通信的工具类 App 开发中，我们需要一种极其稳健的方式来调用外部可执行程序。你是想在鸿蒙侧运行一段 `git` 命令？还是想执行一段 `python` 脚本并将结果实时拉回到 Flutter UI 中展示？
+在鸿蒙（OpenHarmony）桌面级应用或自动化工具开发中，常需要调用外部程序执行任务。`process` 库基于 `dart:io` 提供了更高阶的进程管理抽象，允许开发者轻松执行 Shell 命令、捕获系统输出并管理进程生命周期。
 
-`process` 库是一个基于 `dart:io` 进程管理的增强抽象。它允许你极其轻松地执行命令、捕获输出（Stdout/Stderr）并管理进程的生命周期。在涉及鸿蒙系统底层互操作的场景下，它是不可或缺的指挥官。
-
-## 一、原理展示 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 

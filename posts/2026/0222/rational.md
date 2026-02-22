@@ -7,18 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 rational — 极高精度分数与十进制运算（科研级数值引擎）
+# Flutter for OpenHarmony：rational — 高精度分数与十进制运算
 
 ![rational](images/rational.png)
 
-
 ## 前言
 
-在鸿蒙（OpenHarmony）涉及的金融结算、科学实验数据分析或者是需要极其严密的物理引擎计算中，传统的 `double` 类型（浮点数）往往会带来致命的误差。你是否遇到过 `0.1 + 0.2` 不等于 `0.3` 的尴尬？
+在鸿蒙（OpenHarmony）金融结算或科学计算场景中，传统的浮点数计算往往会带来累积误差。`rational` 库通过理性数（分数）算法确保了数值运算的数学精确性，是处理严密数值业务的可靠选择。
 
-`rational` 库正是为了终结这类问题而生的。它通过**理性数（分数）**的算法逻辑，确保了无论数值多小、运算多频繁，结果永远是数学意义上的精确。在鸿蒙的高精度计算场景下，它是你最可靠的“数字护卫”。
-
-## 一、原理展示 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 

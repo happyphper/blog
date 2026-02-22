@@ -7,19 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 transparent_image 超轻量级解决占位图显示（视觉过渡专家）
+# Flutter for OpenHarmony：transparent_image — 轻量级透明占位图方案
 
 ![transparent_image](images/transparent_image.png)
 
-
-
 ## 前言
 
-在鸿蒙（OpenHarmony）应用开发中，图片的加载总是伴随着“等待”。如果一个包含大量网路图片的列表在渲染时突然出现，或者是先出现一堆白块，会显得极其廉价。
+在鸿蒙（OpenHarmony）应用中，平滑的图片加载过渡能显著提升视觉高级感。`transparent_image` 提供了极其微小的内存透明位图数据，通常作为 `FadeInImage` 等组件的占位符，以极低的成本解决图片加载时的视觉闪烁问题。
 
-`transparent_image` 提供了一个极其微小的、透明的内存位图数据。它通常作为 `FadeInImage` 等组件的占位符（Placeholder）。在鸿蒙应用追求极致包体积和极致启动速度的今天，它能帮你极其优雅地完成从“空白”到“内容图片”的视觉过渡。
-
-## 一、原理解析 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 

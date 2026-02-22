@@ -7,19 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 nm — Linux 风格 NetworkManager 触手可及（网络底层管控）
+# Flutter for OpenHarmony：nm — Linux 风格的网络底层管控实践
 
 ![nm](images/nm.png)
 
-
-
 ## 前言
 
-在一些深度定制的鸿蒙（OpenHarmony）桌面发行版、车载系统或工业平板中，底层往往沿用了成熟的 Linux 网络管理架构——**NetworkManager**。如果你正需要在这些特殊的鸿蒙设备上进行极其细致的网络控制（比如：切换特定的 WiFi 热点、配置静态 IP、甚至是监控蜂窝网卡的物理状态），那么传统的 UI 框架接口可能力不从心。
+在鸿蒙（OpenHarmony）桌面版或车载系统中，底层常沿用 NetworkManager 架构。`nm` 库通过 D-Bus 总线与系统守护进程交互，为开发者提供了切换 WiFi、配置 IP 及监控网卡状态等工业级网络管控能力。
 
-`nm` 库（NetworkManager for Dart）应运而生。它通过 D-Bus 总线与系统级的 NetworkManager 守候进程直接对话，为你提供了一套工业级的网络管控能力。
-
-## 一、原理展示 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 

@@ -7,15 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 flutter_launcher_icons — 一键自动化生成多端应用图标（品牌自动化引擎）
+# Flutter for OpenHarmony：flutter_launcher_icons — 自动化生成图标实战
+
+![flutter_launcher_icons](images/flutter_launcher_icons.png)
 
 ## 前言
 
-在鸿蒙（OpenHarmony）应用开发的最后冲刺阶段，你是否还在为了生成几十张不同尺寸（hdpi, xhdpi, xxhdpi...）的应用图标而焦头烂额？手动裁剪图片不仅低效，还容易出现缩放后的边缘锯齿或比例失效。
+在鸿蒙（OpenHarmony）应用开发的冲刺阶段，手动裁剪适配各尺寸（hdpi, xxhdpi 等）的图标既费时又易错。`flutter_launcher_icons` CLI 工具能基于一张高清原图，快速生成各平台的规范图标，是品牌工业化生成的利器。
 
-`flutter_launcher_icons` 是 Flutter 生态中装机量极其庞大的 CLI 工具。它能让你仅需一张高分辨率的原始图片，通过一行简单的命令，自动化为鸿蒙、Android 和 iOS 等所有平台裁剪、重命名并放置好对应的图标。在鸿蒙应用追求“像素级完美”的视觉标准下，它是你的品牌工业化利器。
-
-## 一、原理展示 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 
@@ -75,7 +75,6 @@ flutter_launcher_icons:
   # dart run flutter_launcher_icons:main -f flutter_launcher_icons-dev.yaml
 ```
 
-![flutter_launcher_icons](images/flutter_launcher_icons.png)
 
 ## 四、OpenHarmony 平台适配挑战
 

@@ -7,18 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 mysql_client 高性能原生连接 MySQL（数据直连引擎）
+# Flutter for OpenHarmony：mysql_client — 高性能 MySQL 数据库直连实战
 
 ![mysql_client](images/mysql_client.png)
 
-
 ## 前言
 
-在一些鸿蒙（OpenHarmony）特殊的内网系统、物联网采集网关或特定的桌面化应用场景中，我们可能需要绕过繁琐的 Web 中间件，直接在鸿蒙设备侧与远端的 **MySQL/MariaDB** 数据库进行交互。
+在鸿蒙（OpenHarmony）特定的内网系统或工业网关场景中，可能需要绕过中间件直连数据库。`mysql_client` 采用纯 Dart 编写，支持完整的 SQL 执行与事务管理，能为鸿蒙端侧提供低延迟的 MySQL/MariaDB 交互体验。
 
-`mysql_client` 是一款纯 Dart 编写、具备高性能协议解析能力的客户端。它支持全功能的 SQL 语句执行、参数化查询和事务管理。虽然在普通公网 App 中不建议直连，但在鸿蒙可控的内网环境下，它能提供及其快速、低延迟的数据读写体验。
-
-## 一、原理解析 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 

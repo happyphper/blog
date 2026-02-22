@@ -7,18 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 mqtt5_client — 极速物联网设备状态同步（MQTT 5.0 引擎）
+# Flutter for OpenHarmony：mqtt5_client — 物联网设备状态同步实战
 
 ![mqtt5_client](images/mqtt5_client.png)
 
-
 ## 前言
 
-在鸿蒙（OpenHarmony）万物互联的战略中，设备与设备之间、应用与传感器之间的高效低延迟通讯是第一要务。如果你还在用缓慢且沉重的 HTTP 轮询来获知智能插座是否被打开，那极大浪费了手机终端的电池。
+在鸿蒙（OpenHarmony）万物互联场景中，高效低延迟的通讯是核心。`mqtt5_client` 提供了物联网黄金标准协议支持，包含轻量级的 Pub/Sub 模型、增强的容错机制及共享订阅功能，是构建鸿蒙 IoT 中控应用的理想选择。
 
-`mqtt5_client` 带来了最新的物联网黄金标准协议。它不仅继承了轻量级别的 Pub/Sub 分发模型，更是为大规模车联网、智能家居应用带来了极强的双向容错机制以及对于 Shared Subscriptions (共享订阅) 的支持。在构建鸿蒙底色下的 IoT 中控级 App 时，它是你的网络中枢大动脉。
-
-## 一、原理展示 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 

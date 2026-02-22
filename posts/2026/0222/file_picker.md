@@ -7,15 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 file_picker — 多功能跨平台文件选择器（系统交互引擎）
+# Flutter for OpenHarmony：file_picker — 跨平台文件选择器实战
+
+![file_picker](images/file_picker.png)
 
 ## 前言
 
-在鸿蒙（OpenHarmony）办公、教育或资源管理类应用中，让用户从海量的本地存储中“挑选”出一个文件（如：PDF 合同、教学视频、或者压缩包）是一个最基础的交互动作。手动去写底层的存储权限申请和文件树遍历极其痛苦。
+在鸿蒙（OpenHarmony）应用中，文件拾取是办公与资源管理类场景的基础交互。`file_picker` 插件一站式解决了权限申请与文件浏览的复杂逻辑，支持多种类型过滤，能流畅调起系统原生文件管理器，极大提升了开发效率。
 
-`file_picker` 是一款享誉社区的文件选择插件。它不仅支持单选、多选，还支持按类型（图片、视频、任意文件等）过滤。在鸿蒙设备上，它能极其流畅地调起系统原生文件管理器，一站式解决文件拾取问题。
-
-## 一、原理展示 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 
@@ -85,7 +85,6 @@ Future<void> attachResume() async {
 }
 ```
 
-![file_picker](images/file_picker.png)
 
 ## 四、OpenHarmony 平台适配挑战
 

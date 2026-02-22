@@ -2,7 +2,8 @@
 
 # Flutter for OpenHarmony：pem — 在鸿蒙应用中优雅处理加密证书与密钥
 
-## 前言
+![pem](images/pem.png)
+
 
 在现代移动应用的网络安全、数字签名及加密传输中，证书的管理是基石。无论是对接 HTTPS 的私有根证书，还是在进行 RSA 加密时加载私钥，我们通常会接触到 **PEM (Privacy-Enhanced Mail)** 格式的文件——即那些以 `-----BEGIN CERTIFICATE-----` 开头的文本块。
 

@@ -7,19 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 rename — 应用标识更名神级终端工具（项目包构建引擎）
+# Flutter for OpenHarmony：rename — 跨平台应用标识更名工具
 
 ![rename](images/rename.png)
 
-
-
 ## 前言
 
-在鸿蒙（OpenHarmony）以及其他全端平台混合应用构建及部署过程中，开发者面临最头痛的初始化琐事之一就是：将一个名为 `com.example.app` 的默认项目，全局性且不出错地更换包名为 `com.megacorp.harmony_app`，另外也许还要一并把手机端桌面的应用展现名字从简陋的 `myapp` 改成酷炫且具有强力表现意味的中文名称。如果你还在自己手动全局搜索字符串、到处翻阅原生层各类复杂的 Gradle/manifest 乃至 info.plist 配置文件并逐一修正。
+在鸿蒙（OpenHarmony）及多端发布过程中，全局修改应用包名或显示名称是常见的初始化需求。`rename` 是一款高效的 CLI 工具，能自动化替换原生层配置文件中的标识符。
 
-`rename` 是目前公认针对该痛苦深渊最佳全端指令化清理专家之一的一项专门处理类实用 CLI 库。它以极度快速稳健的方式帮你一键深潜入系统各类特定端项目的底层文件根茎节点把涉及标识与别名的条目由于极其准确的全域替换完成修改保存提交任务流程的优化方案利器组件。
-
-## 一、原理展示 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 

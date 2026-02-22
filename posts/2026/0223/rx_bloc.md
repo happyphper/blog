@@ -2,7 +2,8 @@
 
 # Flutter for OpenHarmony：rx_bloc — 结合响应式编程管理鸿蒙状态
 
-## 前言
+![rx_bloc](images/rx_bloc.png)
+
 
 在 Flutter 应用中，状态管理一直是架构设计的核心资产。虽然 `Bloc` 模式已经通过 `flutter_bloc` 获得了广泛认同，但在处理复杂的异步数据流、输入验证和资源释放时，单纯的命令式逻辑往往会变得捉襟见肘。
 

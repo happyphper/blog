@@ -7,19 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 path_provider — 精准获取系统标准目录（存储导航专家）
+# Flutter for OpenHarmony：path_provider — 获取系统标准目录指南
 
 ![path_provider](images/path_provider.png)
 
-
-
 ## 前言
 
-在鸿蒙（OpenHarmony）应用开发中，数据存放在哪儿是一个极其严肃的问题。你是应该把私有配置存在系统的 `ApplicationSupport` 目录下？还是把用户的离线视频缓存存在 `Cache` 目录？
+在鸿蒙（OpenHarmony）应用开发中，遵循沙箱隔离机制正确存放数据至关重要。`path_provider` 是官方核心库，能动态获取当前环境下的文档存储、临时缓存等标准目录，帮助开发者规避硬编码路径导致的 IO 失败。
 
-由于鸿蒙系统有着极其严格的沙箱隔离机制（每一个应用都有自己专属的、外人不可见的目录空间），硬编码路径（如 `/data/app/...`）几乎是 100% 会失败的。`path_provider` 是官方出品的核心库，它能帮你动态发现当前鸿蒙系统环境下那些合法、标准的存储路径。
-
-## 一、原理展示 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 

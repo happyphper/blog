@@ -7,15 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 flutter_keyboard_visibility — 极其灵敏的软键盘监听与避让（交互体验引擎）
+# Flutter for OpenHarmony：flutter_keyboard_visibility — 软键盘感知与避让实战
+
+![flutter_keyboard_visibility](images/flutter_keyboard_visibility.png)
 
 ## 前言
 
-在鸿蒙（OpenHarmony）社交、聊天或者是表单输入类应用开发中，软键盘的弹起和收起经常会引发一系列视觉焦虑：底部遮挡了提交按钮？键盘弹起的瞬间背景图由于 resize 发生了难看的拉伸？你是否想要在键盘弹起时自动隐藏底部的 TabBar，或者在收起后自动聚焦到下一个输入框？
+在鸿蒙（OpenHarmony）社交或表单应用中，软键盘弹起常会导致组件遮挡或背景拉伸问题。`flutter_keyboard_visibility` 提供了响应式的键盘状态监测，帮助开发者轻松实现组件避让与动画联动，是优化移动端输入体验的利器。
 
-`flutter_keyboard_visibility` 是一款专门为解决“键盘状态感知”而生的插件。它绕过了系统底层复杂的键盘通知机制，为鸿蒙开发者提供了一个极其简单、支持响应式观察（Reactive Observation）的封装。在处理鸿蒙应用“输入体验精装修”时，它是不可或缺的监测器。
-
-## 一、原理展示 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 
@@ -97,7 +97,6 @@ void setupHarmonyChat() {
 }
 ```
 
-![flutter_keyboard_visibility](images/flutter_keyboard_visibility.png)
 
 ## 四、OpenHarmony 平台适配挑战
 

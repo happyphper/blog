@@ -1,14 +1,14 @@
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：string_similarity — 智能字符串相似度匹配实战
+# Flutter for OpenHarmony：string_similarity — 智能字符串相似度匹配
+
+![string_similarity](images/string_similarity.png)
 
 ## 前言
 
-在开发移动应用时，我们经常会遇到需要对字符串进行“模糊匹配”或“相似度计算”的场景。例如：搜索框的自动纠错、内容去重、推荐系统中的相似标签匹配等。
+在鸿蒙（OpenHarmony）应用开发中，搜索纠错、内容去重及相似推荐是提升体验的关键。`string_similarity` 基于 Dice's Coefficient 算法提供轻量级的模糊匹配方案，能通过科学的相似度分值帮助开发者精准处理用户输入。
 
-在 **OpenHarmony** 环境下，利用 `string_similarity` 库，我们可以非常高效地计算两个字符串之间的相似程度（基于 Dice's Coefficient 算法）。本文将带您深入实战，看看如何在鸿蒙应用中玩转字符串相似度计算。
-
-## 一、为什么需要 string_similarity？
+## 一、核心价值
 
 ### 1.1 语义纠错的挑战
 传统的 `contains` 或正则匹配只能处理硬匹配，对于用户输入错误（如将 "HarmonyOS" 输成 "HarmanyOS"）往往无能为力。

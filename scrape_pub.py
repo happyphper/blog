@@ -44,7 +44,7 @@ def scrape_pub_packages(query="sdk:dart", start_page=1, end_page=1):
 
 if __name__ == "__main__":
     # 调用示例：抓取第 16 页到第 17 页
-    all_names = scrape_pub_packages(start_page=41, end_page=45)
+    all_names = scrape_pub_packages(start_page=46, end_page=50)
     
     print("\n" + "="*30)
     print(f"抓取完成！共获得 {len(all_names)} 个包名：")

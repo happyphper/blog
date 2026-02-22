@@ -2,7 +2,8 @@
 
 # Flutter for OpenHarmony：metadata_fetch — 赋予鸿蒙应用极速抓取网页元信息的能力
 
-## 前言
+![metadata_fetch](images/metadata_fetch.png)
+
 
 在进行社交分享、书签管理或者内容聚合类应用开发时，我们经常需要实现一个功能：当用户输入一个 URL 网址，应用能自动展示该网页的标题、描述、首图甚至是图标。这种“网页快读”功能极大地提升了应用的信息密度与视觉美感。
 

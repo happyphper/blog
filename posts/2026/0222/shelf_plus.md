@@ -7,18 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 shelf_plus 让服务端开发更具 Dart 范儿（后端增强引擎）
+# Flutter for OpenHarmony：shelf_plus — 现代化的 Dart 后端开发体验
 
 ![shelf_plus](images/shelf_plus.png)
 
-
 ## 前言
 
-在鸿蒙（OpenHarmony）开发者转向全栈开发的过程中，`shelf` 是生态中最底层的 Web 服务标准。虽然它极其稳定，但原生的 `shelf` 往往显得过于“原始”——你需要手动处理路由映射、繁琐的 JSON 序列化以及复杂的错误捕捉。
+在鸿蒙（OpenHarmony）生态中，`shelf` 是 Web 服务的底层标准。`shelf_plus` 针对原生库进行了全功能增强，提供了语义化路由、自动 JSON 转换及完善的异常拦截，使得构建中转网关或本地调试服务器变得更加高效。
 
-`shelf_plus` 是一款针对 shelf 的全功能增强库。它引入了更加优雅的路由语法、类型安全的响应处理和极简的 JSON 支持。如果你在为鸿蒙应用构建中转网关或是本地 HTTP 调试服务器，`shelf_plus` 能让你感觉到像写 Flutter UI 一样顺滑。
-
-## 一、原理解析 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 

@@ -7,19 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 icon_font_generator 自动化图标字体工作流（资产管理引擎）
+# Flutter for OpenHarmony：icon_font_generator — 自动化图标字体工作流
 
 ![icon_font_generator](images/icon_font_generator.png)
 
-
-
 ## 前言
 
-在鸿蒙（OpenHarmony）应用开发中，使用 `IconFont`（图标字体）是优化性能和包体积的最佳实践：一张 100 多个图标的字体文件（.ttf）往往只有几十 KB，且支持无限缩放和极其随意的颜色更改。
+在鸿蒙（OpenHarmony）应用中，使用 IconFont 是优化性能与包体积的最佳实践。`icon_font_generator` 命令行工具能将 SVG 图标一键转换为 .ttf 字体文件并生成 Dart 引用类，大幅提升了图标资产管理的自动化程度。
 
-但是，如果你每次从 UI 设计师那里拿到一堆 SVG 图标都需要手动去线上转换、手动记 Unicode 编码，那开发效率将极其低下。`icon_font_generator` 是一款强大的命令行工具。它能将一个文件夹下的所有 SVG 图标，一键自动化转换成 `.ttf` 字体文件，并同步生成对应的 Dart 引用类。在鸿蒙项目的资产管理中，它是效率提升的杀手锏。
-
-## 一、原理展示 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 

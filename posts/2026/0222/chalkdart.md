@@ -7,15 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 chalkdart 给你的控制台点颜色瞧瞧（彩色日志打印）
+# Flutter for OpenHarmony：chalkdart — 打造炫彩控制台调试体验
+
+![chalkdart](images/chalkdart.png)
 
 ## 前言
 
-在鸿蒙（OpenHarmony）开发的漫长调试期，面对 DevEco Studio 控制台中那白花花的一片日志，你是否感到视觉疲劳？当报错和普通的 API 响应混在一起时，极易错过关键的 BUG 提示。
+面对繁杂的鸿蒙（OpenHarmony）调试日志，单一的黑白文本往往容易让人错过关键信息。`chalkdart` 引入了 ANSI 转义序列支持，让控制台输出色彩更加鲜明，显著提升了开发者的日志识别效率。
 
-`chalkdart` 是由著名的 JavaScript `chalk` 库移植而来的 Dart 版。它利用了 ANSI 转义序列，让你可以极其简单地在鸿蒙控制台中打印出色彩斑斓、带有背景色甚至加粗、下划线的交互文本，从而大幅提升调试效率。
-
-## 一、原理解析 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 
@@ -89,7 +89,6 @@ void runMigration() {
 }
 ```
 
-![chalkdart](images/chalkdart.png)
 
 ## 四、OpenHarmony 平台适配挑战
 

@@ -7,19 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 flutter_platform_alert — 极简的原生对话框与反馈音（交互反馈引擎）
+# Flutter for OpenHarmony：flutter_platform_alert — 极简原生对话框与提示音
 
 ![flutter_platform_alert](images/flutter_platform_alert.png)
 
-
-
 ## 前言
 
-在鸿蒙（OpenHarmony）某些高性能、轻量级的工具类应用中，你可能不希望为了一个简单的“确认删除”弹窗而渲染沉重的 Flutter Material 组件库。你是否想要直接呼叫鸿蒙系统底层的 Alert 弹窗？更进一步，是否想要在弹窗的同时响起系统自带的“叮”一声提示音？
+在追求轻量化的鸿蒙应用中，若仅需简单的删除确认等交互，无需渲染复杂的组件。`flutter_platform_alert` 允许开发者直接调用系统底层 Alert 弹窗与反馈音，在保障原生感的同时显著降低了资源占用的开销。
 
-`flutter_platform_alert` 是一款专注于调用系统级 UI 资源的插件。它摒弃了复杂的布局，直接与鸿蒙原生的弹窗管理器对话。在需要极其快速、且不占用任何 Flutter 绘图资源进行用户反馈时，它是你最轻量的交互武器。
-
-## 一、原理展示 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 

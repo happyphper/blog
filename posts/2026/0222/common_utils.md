@@ -7,15 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 common_utils 基础工具类的瑞士军刀（常用工具集）
+# Flutter for OpenHarmony：common_utils — 基础工具类的瑞士军刀
+
+![common_utils](images/common_utils.png)
 
 ## 前言
 
-在参与鸿蒙（OpenHarmony）大前端开发时，我们经常会遇到一些细碎但繁琐的任务：身份证号校验、手机号脱敏、时间格式化、甚至是一个简单的倒计时逻辑。如果每个项目都手动写一套这些代码，不仅效率低下，还容易出错。
+在鸿蒙（OpenHarmony）开发中，处理日期格式化、数据校验及高精度计算等重复性逻辑会消耗大量精力。`common_utils` 提供了涵盖日期、正则、数值及对象判空等全方位工具方法，是提升鸿蒙跨平台开发效率的标配库。
 
-`common_utils` 是一款极其经典的 Dart 工具库，被称为 Flutter 开发者的“瑞士军刀”。它涵盖了日期、数字、正则、对象、JSON 等各个方面的工具方法。本文将手把手带你在鸿蒙适配中解锁这款效率神器的核心玩法。
-
-## 一、原理解析 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 
@@ -82,7 +82,6 @@ void showTimeline() {
 }
 ```
 
-![common_utils](images/common_utils.png)
 
 ## 四、OpenHarmony 平台适配挑战
 

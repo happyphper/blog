@@ -7,18 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 numeral 极其简约的数字格式化缩写工具（金融级数字展示）
+# Flutter for OpenHarmony：numeral — 简约的数字格式化与缩写工具
 
 ![numeral](images/numeral.png)
 
-
 ## 前言
 
-在鸿蒙（OpenHarmony）应用开发中，数字展示的细节往往决定了 UI 的高级感。你是希望用户看到一个冰冷的“1234567”，还是希望看到一个极其易读的“1.23M”或“123.5万”？当屏幕空间有限（如：鸿蒙智能手表）时，数字的紧凑化处理更是一门必修课。
+在鸿蒙（OpenHarmony）应用中，优雅的数字展示（如 1.2M 或 10万+）是提升 UI 感的关键。`numeral` 借鉴了经典库的设计，为开发者提供了直观的数字缩写与精度控制方案，特别适用于空间受限的手表端或金融统计页面。
 
-`numeral` 是一款专注于数字转换与缩写的精简工具库。它借鉴了著名的 `numeral.js`，为鸿蒙开发者提供了一套极其直观的语法来美化你的金钱、点赞数和数据统计。
-
-## 一、原理解析 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 

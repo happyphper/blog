@@ -2,7 +2,8 @@
 
 # Flutter for OpenHarmony：os_detect — 精准洞察鸿蒙系统的底层脉络
 
-## 前言
+![os_detect](images/os_detect.png)
+
 
 在进行 **Flutter for OpenHarmony** 跨平台开发时，我们经常需要处理“差异化”的需求。有的功能可能只在真正的 OpenHarmony 原生环境下运行（如特定的 N-API 调用），而在 Web 或其他桌面模拟器环境下则需要进行降级处理。
 

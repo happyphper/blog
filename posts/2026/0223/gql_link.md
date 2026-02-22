@@ -2,7 +2,8 @@
 
 # Flutter for OpenHarmony：gql_link — 掌握鸿蒙端 GraphQL 请求拦截与扩展核心
 
-## 前言
+![gql_link](images/gql_link.png)
+
 
 在现代 App 开发中，GraphQL 的灵活性让我们能精准获取数据。然而，一个健壮的 GraphQL 架构不仅需要发送请求，更需要对请求进行“手术刀”级的拦截、转换和链路编排。例如：统一注入身份 Token、自动日志记录、根据网络状况切换端点等。
 

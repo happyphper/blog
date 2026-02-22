@@ -2,7 +2,8 @@
 
 # Flutter for OpenHarmony：screwdriver — 助力鸿蒙开发的百宝袋工具库
 
-## 前言
+![screwdriver](images/screwdriver.png)
+
 
 在进行 **Flutter for OpenHarmony** 开发时，我们经常会遇到一些微小但繁琐的逻辑处理。比如：判断一个字符串是否为有效的 JSON、对列表进行优雅地去重、或者是快速获取当前日期的凌晨时间。如果每个项目都手写这些“实用函数”（Utils），不仅浪费时间，还会导致项目中散落着各种风格不一的小工具。
 

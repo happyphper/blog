@@ -7,15 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 bluez 玩转 Linux 风格的蓝牙操作（蓝牙底层互操作）
+# Flutter for OpenHarmony：bluez — 玩转底层蓝牙 D-Bus 通信
+
+![bluez](images/bluez.png)
 
 ## 前言
 
-随着鸿蒙（OpenHarmony）在工业互联网、智能座舱和物联网（IoT）领域的深入应用，与蓝牙设备的底层通信成为了许多开发者的刚需。在一些基于鸿蒙内核的特定工业版或车机版系统中，底层可能由于适配历史原因或分层设计，保留了类似 Linux 的 D-Bus 通信机制。
+在特定工业版或车机版鸿蒙（OpenHarmony）系统中，底层常保留 D-Bus 通信机制。`bluez` 库为开发者提供了直接与 Linux BlueZ 协议栈交互的能力，是通往定制化鸿蒙系统蓝牙底层控制的钥匙。
 
-`bluez` 是一个专门用于与 Linux BlueZ 蓝牙协议栈通过 D-Bus 进行交互的 Dart 库。虽然对于普通的 HarmonyOS NEXT 手机开发我们通常使用官方的蓝牙插件，但在深度定制的鸿蒙发行版中，`bluez` 库为我们提供了一扇通往蓝牙底层控制的大门。
-
-## 一、原理解析 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 
@@ -86,7 +86,6 @@ void connectToIndustrialSensor(BlueZDevice sensor) async {
 }
 ```
 
-![bluez](images/bluez.png)
 
 ## 四、OpenHarmony 平台适配挑战
 

@@ -7,19 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 mason_logger — 极其精美的命令行日志增强（CLI 交互引擎）
+# Flutter for OpenHarmony：mason_logger — 精美的命令行日志增强
 
 ![mason_logger](images/mason_logger.png)
 
-
-
 ## 前言
 
-在鸿蒙（OpenHarmony）工具链开发、脚手架构建或者是复杂的后台自动化任务中，一个糟糕的终端输出（只有一堆原始文本）会极大地打击开发者的热情。当你执行一个耗时 10 秒的编译任务时，你更希望看到的是一个极其动感的进度条（Progress Bar）和清晰的步骤提示，而不是死寂。
+在鸿蒙（OpenHarmony）工具链开发或脚手架构建中，清晰的终端反馈能显著降低开发者的心智负担。`mason_logger` 提供了一套现代化的 UI 套件，包含动态进度条、交互式列表及色彩分级的消息提示，是打造顶级 CLI 交互体验的必选方案。
 
-`mason_logger` 是由著名的 Mason 团队出品的终端交互库。它提供了一套极其现代化的、兼容性极佳的 UI 套件：包含色彩分级的消息、动态 Loading、可交互的选择列表以及工整的表格展示。在鸿蒙脚手架和 CLI 工程中，它是打造顶级用户体验的必选。
-
-## 一、原理展示 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 

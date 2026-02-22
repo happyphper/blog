@@ -7,15 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 executor 并发执行与限流控制器（任务调度引擎）
+# Flutter for OpenHarmony：executor — 并发执行与限流控制器
+
+![executor](images/executor.png)
 
 ## 前言
 
-在鸿蒙（OpenHarmony）高性能开发中，我们常常需要同时发起几十甚至上百个异步任务（比如：批量下载资源图、初始化大量的分布式节点数据）。由于系统资源（如 HTTP 连接数、CPU 周期）是有限的，如果同时暴力开启过多异步操作，会导致鸿蒙设备的内存瞬间过载甚至网络请求被系统强制熔断。
+在鸿蒙（OpenHarmony）高性能开发中，同时处理海量异步任务（如批量下载或节点初始化）易导致系统资源过载。`executor` 提供了一套优雅的任务调度机制，允许开发者精确控制并发上限，通过队列平滑处理任务，保障应用流畅性。
 
-`executor` 是一个极其优雅的任务执行调度库。它允许你极其精确地设置并发上限，并通过队列机制平滑地消化海量任务，保卫鸿蒙应用的流畅性。
-
-## 一、原理解析 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 
@@ -80,7 +80,6 @@ Future<void> indexHarmonyPhotos(List<String> paths) async {
 }
 ```
 
-![executor](images/executor.png)
 
 ## 四、OpenHarmony 平台适配挑战
 

@@ -1,14 +1,14 @@
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：translator — 让鸿蒙应用拥抱多语言实时翻译
+# Flutter for OpenHarmony：translator — 多语言实时翻译实战
+
+![translator](images/translator.png)
 
 ## 前言
 
-在全球化的今天，一个优秀的移动应用必须具备跨越语言障碍的能力。无论是社交聊天的实时互动、新闻资讯的多语种阅读，还是出境旅游时的场景辅助，实时翻译功能都能极大地提升鸿蒙（OpenHarmony）应用的用户粘性与国际化质感。
+在全球化场景下，实时翻译是提升应用国际化质感的关键。`translator` 库基于谷歌翻译端点，以纯 Dart 实现，提供了一套无需复杂配置即可上手的在线翻译方案，能帮助鸿蒙（OpenHarmony）开发者优雅地打通全球语言链路。
 
-在 **Flutter for OpenHarmony** 开发中，实现一套极简的翻译接口并不复杂。`translator` 库基于谷歌翻译（Google Translate）的公开端点，为我们提供了一个无需复杂 API 密钥配置即可快速上手的翻译方案。今天，我们来实战如何在鸿蒙应用中优雅地打通全球语言链路。
-
-## 一、为什么集成 translator 库？
+## 一、核心价值
 
 ### 1.1 极简集成体验
 许多翻译服务需要繁琐的注册、实名以及复杂的 SDK 导入。`translator` 库以纯 Dart 实现，只需几行代码即可实现在线翻译，非常适合鸿蒙跨平台应用的早期原型开发和轻量级需求。

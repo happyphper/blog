@@ -7,15 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 clock 优雅地接管时间流逝（跨平台时间管理）
+# Flutter for OpenHarmony：clock — 精准掌控时间流逝的管理工具
+
+![clock](images/clock.png)
 
 ## 前言
 
-在鸿蒙（OpenHarmony）应用开发过程中，我们经常需要处理与时间相关的逻辑，比如显示当前日期、计算倒计时或者在单元测试中模拟特定时间。直接使用 Dart 原生的 `DateTime.now()` 虽然简单，但在复杂的测试场景下，你会发现很难“冻结”或“穿越”时间。
+在处理倒计时或单元测试时，直接调用 `DateTime.now()` 往往难以满足对时间的精准模拟。`clock` 库通过抽象时间获取机制，允许开发者在鸿蒙（OpenHarmony）应用中自由接管时间步调，显著提升系统的可测试性。
 
-`clock` 是由 Google 官方维护的一个轻量级工具库，它提供了一个统一的接口来访问当前时间。通过它，你可以轻松地在代码中注入一个“时钟”对象，从而实现对时间的精准控制。本文将带你深度领略 `clock` 在鸿蒙开发中的实战魅力。
-
-## 一、原理解析 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 
@@ -85,7 +85,6 @@ class HarmonyAnniversaryWidget extends StatelessWidget {
 }
 ```
 
-![clock](images/clock.png)
 
 ## 四、OpenHarmony 平台适配挑战
 

@@ -2,7 +2,8 @@
 
 # Flutter for OpenHarmony：signalr_core — 实现高性能实时双向通信
 
-## 前言
+![signalr_core](images/signalr_core.png)
+
 
 在现代移动应用中，实时通信已成为不可或缺的能力。无论是实时聊天、在线协作办公、甚至是股票行情的瞬时同步，都需要一套能够在服务端与客户端之间保持长连接且支持双向推送的机制。
 

@@ -7,15 +7,15 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 fluster — 极其高效率的空间四叉树地图标记聚类算法（地理空间计算引擎）
+# Flutter for OpenHarmony：fluster — 高效地图标记聚类算法
+
+![fluster](images/fluster.png)
 
 ## 前言
 
-在鸿蒙（OpenHarmony）基于地图服务（比如找房、附近共享单车、物流网点分布）的地理空间大型应用中。如果开发者简单粗暴地把几千个 `Marker` （标记点）全量在地图 UI 上渲染出来。它不仅仅会极其丑陋地密密麻麻遮盖了地图的本身面貌，更会让原本丝滑的跨平台混合由于不堪重负渲染压力掉帧卡死跌至冰点。
+在鸿蒙（OpenHarmony）地图应用中，若同时渲染数千个标记点，不仅界面混乱，更会拖慢响应速度。`fluster` 基于四叉树算法提供极速的地理聚类计算，能将杂乱分布的数据按缩放比例平滑聚合，是构建高性能地图应用的核心基座。
 
-`fluster` 是一个基于极其富有科幻数学美感而设计的极速四叉树算法纯 Dart 端端侧地理聚类分析计算器。它与各大鸿蒙上存在的地图 SDK (不管是高德还是百度或是海外引擎) 彻底剥离并解耦。只需极其低廉的端侧算力，它就能把上万颗杂乱分布在你周边的数据根据你手指搓动缩放极其平滑地变成极其漂亮有逻辑层级的聚合点，它是你绘制地图之网不可或缺的超级节点指挥官基座。
-
-## 一、原理展示 / 概念介绍
+## 一、核心价值
 
 ### 1.1 基础概念
 
@@ -88,7 +88,6 @@ final clusters = flusterManager.clusters([-180, -85, 180, 85], currentMapZoomLev
 mapUIComponent.updateMarkersFrom(clusters);
 ```
 
-![fluster](images/fluster.png)
 
 ## 四、OpenHarmony 平台适配挑战
 

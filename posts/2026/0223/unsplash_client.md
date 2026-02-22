@@ -1,14 +1,14 @@
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：unsplash_client — 打造惊艳的高清壁纸素材库
+# Flutter for OpenHarmony：unsplash_client — 高清摄影素材库接入实战
+
+![unsplash_client](images/unsplash_client.png)
 
 ## 前言
 
-在现代移动应用设计中，高质量的视觉素材是提升用户体验的关键。Unsplash 作为一个提供海量免费高分辨率摄影作品的平台，其丰富的图片库成为了许多壁纸类、创意类及生活方式类应用的首选。
+高质量视觉素材是提升鸿蒙（OpenHarmony）应用体验的关键。`unsplash_client` 对 Unsplash API 进行了深度封装，提供了从搜索、筛选到多尺寸下载的全链路支持，能帮助开发者在鸿蒙终端快速构建视觉效果拉满的图片发现引擎。
 
-在 **Flutter for OpenHarmony** 开发中，如何专业地集成 Unsplash 的丰富资源？`unsplash_client` 库通过对 Unsplash API 的深度封装，为我们提供了从搜索、筛选到下载的全链路解决方案。今天，我们将实战如何在鸿蒙设备上构建一个视觉效果拉满的图片发现引擎。
-
-## 一、为什么集成 Unsplash API？
+## 一、核心价值
 
 ### 1.1 卓越的资源质量
 Unsplash 的图片均经过人工审核，构图专业且分辨率极高，非常适合鸿蒙系统（如搭载高性能显示屏的华为 Mate 系列）展示。

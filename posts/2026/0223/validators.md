@@ -1,14 +1,14 @@
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：validators — 极简且强大的鸿蒙数据校验专家库
+# Flutter for OpenHarmony：validators — 极简的数据校验专家
+
+![validators](images/validators.png)
 
 ## 前言
 
-在任何移动应用中，对用户输入的数据进行校验都是保障业务安全与数据质量的第一道防线。无论是邮箱格式、手机号码、强密码校验，还是复杂的 URL 验证，如果每一处都手写正则表达式，不仅代码难以阅读，还容易引入各种边界漏洞。
+在鸿蒙（OpenHarmony）应用开发中，对输入数据进行校验是保障业务安全的第一道防线。`validators` 库通过语义化函数替代了复杂的正则表达式，极大提升了代码的可读性与健壮性，是构建稳固表单交互的必备助手。
 
-在 **Flutter for OpenHarmony** 开发中，我们需要一套更专业、更具工业标准的校验工具。`validators` 库通过提供大量开箱即用的语义化函数，极大地简化了这一过程。今天，我们将探索如何在鸿蒙应用中优雅地实现精准的数据验证。
-
-## 一、为什么需要 validators 库？
+## 一、核心价值
 
 ### 1.1 让正则表达式退居幕后
 正则表达式虽然强大，但对于大多数开发者来说简直是“天书”。`validators.isEmail(str)` 显然比一长串难懂的正则符号更具可读性。
