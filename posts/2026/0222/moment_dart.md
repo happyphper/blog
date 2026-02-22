@@ -9,6 +9,10 @@ categories: [鸿蒙适配]
 
 # Flutter for OpenHarmony：Flutter 三方库 moment_dart 复刻 Moment.js 体验的极简时间处理（日期操作专家）
 
+![moment_dart](images/moment_dart.png)
+
+
+
 ## 前言
 
 如果你以前是 Web 前端开发者，那你一定非常怀念 `Moment.js` 或是 `Day.js` 那种丝滑的链式调用体验。在鸿蒙（OpenHarmony）应用开发中，原生的 `DateTime` 库虽然稳健，但在处理“上个周一”、“三个月后的今天”或者是“显示人性化的相对时间”时，代码会变得极其冗长。

@@ -9,6 +9,10 @@ categories: [鸿蒙适配]
 
 # Flutter for OpenHarmony：Flutter 三方库 stack — 轻量级实现 LIFO 栈数据结构（基础算法引擎）
 
+![stack](images/stack.png)
+
+
+
 ## 前言
 
 在鸿蒙（OpenHarmony）应用的基础逻辑开发中，我们常常需要用到“后进先出（LIFO）”的数据模型。比如：浏览器的历史记录回退、文本编辑器的“撤销/重做”功能、或者是解析极其复杂的嵌套 JSON/表达式。

@@ -9,6 +9,10 @@ categories: [鸿蒙适配]
 
 # Flutter for OpenHarmony：Flutter 三方库 nm — Linux 风格 NetworkManager 触手可及（网络底层管控）
 
+![nm](images/nm.png)
+
+
+
 ## 前言
 
 在一些深度定制的鸿蒙（OpenHarmony）桌面发行版、车载系统或工业平板中，底层往往沿用了成熟的 Linux 网络管理架构——**NetworkManager**。如果你正需要在这些特殊的鸿蒙设备上进行极其细致的网络控制（比如：切换特定的 WiFi 热点、配置静态 IP、甚至是监控蜂窝网卡的物理状态），那么传统的 UI 框架接口可能力不从心。

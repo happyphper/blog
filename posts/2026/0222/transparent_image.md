@@ -9,6 +9,10 @@ categories: [鸿蒙适配]
 
 # Flutter for OpenHarmony：Flutter 三方库 transparent_image 超轻量级解决占位图显示（视觉过渡专家）
 
+![transparent_image](images/transparent_image.png)
+
+
+
 ## 前言
 
 在鸿蒙（OpenHarmony）应用开发中，图片的加载总是伴随着“等待”。如果一个包含大量网路图片的列表在渲染时突然出现，或者是先出现一堆白块，会显得极其廉价。

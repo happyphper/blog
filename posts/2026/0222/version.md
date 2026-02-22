@@ -9,6 +9,10 @@ categories: [鸿蒙适配]
 
 # Flutter for OpenHarmony：Flutter 三方库 version 语义化版本解析与比较（版本发布引擎）
 
+![version](images/version.png)
+
+
+
 ## 前言
 
 在鸿蒙（OpenHarmony）应用的生命周期管理中，应用版本升级（OTA）是不可或缺的环节。判定一个服务器下发的版本号（如 `1.2.0-beta.1`）是否高于本地固件版本，并不是简单的字符串比较（因为 `1.10.0` 字符序排在 `1.2.0` 前面）。

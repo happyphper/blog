@@ -9,6 +9,10 @@ categories: [鸿蒙适配]
 
 # Flutter for OpenHarmony：Flutter 三方库 wav 极简操作 WAV 无损音频（音频底层解析）
 
+![wav](images/wav.png)
+
+
+
 ## 前言
 
 在鸿蒙（OpenHarmony）音频处理、语音识别预处理或一些特定的音乐节奏类游戏中，我们需要对 WAV 这种原始无损音频格式进行深度解析。你是想要读取音频的每一帧采样值绘制波形图？还是想要根据算法生成一段极其纯净的正弦波音频并保存为文件？

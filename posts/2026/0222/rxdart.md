@@ -9,6 +9,10 @@ categories: [鸿蒙适配]
 
 # Flutter for OpenHarmony：Flutter 三方库 rxdart 极致掌控响应式数据流（异步编程引擎）
 
+![rxdart](images/rxdart.png)
+
+
+
 ## 前言
 
 在鸿蒙（OpenHarmony）复杂的业务场景中——比如：实时变化的股票行情、多个传感器聚合的运动数据、或者是需要极其灵敏的防抖搜索——单纯使用 Dart 原生的 `Stream` 可能显得捉襟见肘。

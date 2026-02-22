@@ -9,6 +9,10 @@ categories: [鸿蒙适配]
 
 # Flutter for OpenHarmony：Flutter 三方库 rename — 应用标识更名神级终端工具（项目包构建引擎）
 
+![rename](images/rename.png)
+
+
+
 ## 前言
 
 在鸿蒙（OpenHarmony）以及其他全端平台混合应用构建及部署过程中，开发者面临最头痛的初始化琐事之一就是：将一个名为 `com.example.app` 的默认项目，全局性且不出错地更换包名为 `com.megacorp.harmony_app`，另外也许还要一并把手机端桌面的应用展现名字从简陋的 `myapp` 改成酷炫且具有强力表现意味的中文名称。如果你还在自己手动全局搜索字符串、到处翻阅原生层各类复杂的 Gradle/manifest 乃至 info.plist 配置文件并逐一修正。

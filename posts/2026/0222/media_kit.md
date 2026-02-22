@@ -9,6 +9,10 @@ categories: [鸿蒙适配]
 
 # Flutter for OpenHarmony：Flutter 三方库 media_kit 极致视听的全能播放器内核（音视频旗舰引擎）
 
+![media_kit](images/media_kit.png)
+
+
+
 ## 前言
 
 在鸿蒙（OpenHarmony）应用中，音视频播放是最常见也最“吃性能”的功能。如果你的应用需要极其强大的解码能力（比如秒开 4K 蓝光、支持 RTMP/UDP 流、甚至是支持外挂字幕和倍速播放），系统原生的播放器组件往往显得力不从心。

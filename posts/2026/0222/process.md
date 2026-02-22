@@ -9,6 +9,10 @@ categories: [鸿蒙适配]
 
 # Flutter for OpenHarmony：Flutter 三方库 process — 极其强大的外部进程操作（系统命令引擎）
 
+![process](images/process.png)
+
+
+
 ## 前言
 
 在鸿蒙（OpenHarmony）桌面级应用、自动化脚本或者是需要与鸿蒙底层 Shell 通信的工具类 App 开发中，我们需要一种极其稳健的方式来调用外部可执行程序。你是想在鸿蒙侧运行一段 `git` 命令？还是想执行一段 `python` 脚本并将结果实时拉回到 Flutter UI 中展示？

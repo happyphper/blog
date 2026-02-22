@@ -9,6 +9,10 @@ categories: [鸿蒙适配]
 
 # Flutter for OpenHarmony：Flutter 三方库 path_provider — 精准获取系统标准目录（存储导航专家）
 
+![path_provider](images/path_provider.png)
+
+
+
 ## 前言
 
 在鸿蒙（OpenHarmony）应用开发中，数据存放在哪儿是一个极其严肃的问题。你是应该把私有配置存在系统的 `ApplicationSupport` 目录下？还是把用户的离线视频缓存存在 `Cache` 目录？

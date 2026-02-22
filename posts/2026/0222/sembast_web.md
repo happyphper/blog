@@ -9,6 +9,10 @@ categories: [鸿蒙适配]
 
 # Flutter for OpenHarmony：Flutter 三方库 sembast_web — 轻量可靠的离线微型数据库（缓存引擎）
 
+![sembast_web](images/sembast_web.png)
+
+
+
 ## 前言
 
 在鸿蒙（OpenHarmony）某些不需要复杂关联表的开发场景中（例如：用户偏好设置、购物车缓存、深层 JSON 暂存），使用体积庞大的 SQLite 显得大材小用，而普通的 `shared_preferences` 则无法支持花样繁多的查询。
