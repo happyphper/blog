@@ -9,6 +9,9 @@ categories: [鸿蒙适配]
 
 # Flutter for OpenHarmony：Flutter 三方库 share_plus — 一键系统级内容共享（社交分发引擎）
 
+![share_plus](images/share_plus.png)
+
+
 ## 前言
 
 在鸿蒙（OpenHarmony）应用的信息交互循环中，让用户将精彩的内容刷到朋友圈、发送给通讯录好友或是通过蓝牙/碰一碰共享，是提升应用活跃度的利器。手动对接各个社交平台的 SDK 极其痛苦，且不符合鸿蒙“去中心化”的共享理念。

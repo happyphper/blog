@@ -9,6 +9,9 @@ categories: [鸿蒙适配]
 
 # Flutter for OpenHarmony：Flutter 三方库 mustache_template 动态渲染模板（低代码渲染引擎）
 
+![mustache_template](images/mustache_template.png)
+
+
 ## 前言
 
 在鸿蒙（OpenHarmony）生态开发中，我们难免会遇到“动态内容”的挑战。比如：一套订单通知模板，根据不同的用户、商品、物流信息生成个性化的文案；或者是根据服务端下发的 JSON 数据，动态拼装出一份带样式的简易说明页面。

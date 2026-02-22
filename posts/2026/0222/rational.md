@@ -9,6 +9,9 @@ categories: [鸿蒙适配]
 
 # Flutter for OpenHarmony：Flutter 三方库 rational — 极高精度分数与十进制运算（科研级数值引擎）
 
+![rational](images/rational.png)
+
+
 ## 前言
 
 在鸿蒙（OpenHarmony）涉及的金融结算、科学实验数据分析或者是需要极其严密的物理引擎计算中，传统的 `double` 类型（浮点数）往往会带来致命的误差。你是否遇到过 `0.1 + 0.2` 不等于 `0.3` 的尴尬？

@@ -9,6 +9,9 @@ categories: [鸿蒙适配]
 
 # Flutter for OpenHarmony：Flutter 三方库 sentry_logging — 全景崩溃诊断与监控（异常追踪引擎）
 
+![sentry_logging](images/sentry_logging.png)
+
+
 ## 前言
 
 在鸿蒙（OpenHarmony）商业级应用上线之后，最令开发者心力交瘁的莫过于这句反馈：“软件又闪退了”，而你手头却仅有几句干瘪的用户描述。无论是网络接口抛出的神秘错误，还是鸿蒙底层系统方法调用引发的崩溃。

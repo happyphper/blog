@@ -9,6 +9,9 @@ categories: [鸿蒙适配]
 
 # Flutter for OpenHarmony：Flutter 三方库 mqtt5_client — 极速物联网设备状态同步（MQTT 5.0 引擎）
 
+![mqtt5_client](images/mqtt5_client.png)
+
+
 ## 前言
 
 在鸿蒙（OpenHarmony）万物互联的战略中，设备与设备之间、应用与传感器之间的高效低延迟通讯是第一要务。如果你还在用缓慢且沉重的 HTTP 轮询来获知智能插座是否被打开，那极大浪费了手机终端的电池。

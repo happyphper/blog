@@ -9,6 +9,9 @@ categories: [鸿蒙适配]
 
 # Flutter for OpenHarmony：Flutter 三方库 mysql_client 高性能原生连接 MySQL（数据直连引擎）
 
+![mysql_client](images/mysql_client.png)
+
+
 ## 前言
 
 在一些鸿蒙（OpenHarmony）特殊的内网系统、物联网采集网关或特定的桌面化应用场景中，我们可能需要绕过繁琐的 Web 中间件，直接在鸿蒙设备侧与远端的 **MySQL/MariaDB** 数据库进行交互。

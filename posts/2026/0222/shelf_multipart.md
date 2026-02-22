@@ -9,6 +9,9 @@ categories: [鸿蒙适配]
 
 # Flutter for OpenHarmony：Flutter 三方库 shelf_multipart 极其稳健的 Multipart 请求处理（文件上传后端增强）
 
+![shelf_multipart](images/shelf_multipart.png)
+
+
 ## 前言
 
 在为鸿蒙（OpenHarmony）终端应用构建配套的 Dart 后端（基于 `shelf`）时，**文件上传**是最常见的需求之一。不论是用户头像上传、大文件的日志提交，还是多表单混合提交，都依赖于 `multipart/form-data` 协议。

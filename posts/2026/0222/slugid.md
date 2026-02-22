@@ -9,6 +9,9 @@ categories: [鸿蒙适配]
 
 # Flutter for OpenHarmony：Flutter 三方库 slugid 紧凑型极短唯一 ID 生成器（极简标识引擎）
 
+![slugid](images/slugid.png)
+
+
 ## 前言
 
 在鸿蒙（OpenHarmony）应用开发中，唯一标识符（ID）无处不在：日志 Trace ID、分布式文件系统中的临时节点名、或者是用户分享内容的短链接。标准的 UUID（如 `550e8400-e29b-41d4-a716-446655440000`）虽然极其稳定，但它太长了，在移动端屏幕展示或存储时显得十分累赘。

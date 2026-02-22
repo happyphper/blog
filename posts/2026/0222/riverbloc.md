@@ -7,7 +7,10 @@ categories: [鸿蒙适配]
 
 欢迎加入开源鸿蒙跨平台社区：[https://openharmonycrossplatform.csdn.net](https://openharmonycrossplatform.csdn.net)。
 
-# Flutter for OpenHarmony：Flutter 三方库 riverbloc — 融合状态管理双雄（工程化架构引擎）
+# Flutter for OpenHarmony：Flutter 三方库 riverbloc — 融合状态 management 双雄（工程化架构引擎）
+
+![riverbloc](images/riverbloc.png)
+
 
 ## 前言
 

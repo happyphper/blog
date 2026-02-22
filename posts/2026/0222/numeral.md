@@ -9,6 +9,9 @@ categories: [鸿蒙适配]
 
 # Flutter for OpenHarmony：Flutter 三方库 numeral 极其简约的数字格式化缩写工具（金融级数字展示）
 
+![numeral](images/numeral.png)
+
+
 ## 前言
 
 在鸿蒙（OpenHarmony）应用开发中，数字展示的细节往往决定了 UI 的高级感。你是希望用户看到一个冰冷的“1234567”，还是希望看到一个极其易读的“1.23M”或“123.5万”？当屏幕空间有限（如：鸿蒙智能手表）时，数字的紧凑化处理更是一门必修课。

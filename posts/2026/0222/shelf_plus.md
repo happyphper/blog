@@ -9,6 +9,9 @@ categories: [鸿蒙适配]
 
 # Flutter for OpenHarmony：Flutter 三方库 shelf_plus 让服务端开发更具 Dart 范儿（后端增强引擎）
 
+![shelf_plus](images/shelf_plus.png)
+
+
 ## 前言
 
 在鸿蒙（OpenHarmony）开发者转向全栈开发的过程中，`shelf` 是生态中最底层的 Web 服务标准。虽然它极其稳定，但原生的 `shelf` 往往显得过于“原始”——你需要手动处理路由映射、繁琐的 JSON 序列化以及复杂的错误捕捉。

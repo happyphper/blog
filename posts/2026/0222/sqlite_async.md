@@ -9,6 +9,9 @@ categories: [鸿蒙适配]
 
 # Flutter for OpenHarmony：Flutter 三方库 sqlite_async — 无阻塞异步高性能存储（本地数据库引擎）
 
+![sqlite_async](images/sqlite_async.png)
+
+
 ## 前言
 
 在鸿蒙（OpenHarmony）大体量应用开发（如离线数据采集、复杂金融对账终端、重度社交）中，本地数据往往占据着应用最核心的架构位置。如果你已经对 `sqflite` 遇到复杂高并发读写时界面出现卡顿甚至线程死锁感到痛苦。
